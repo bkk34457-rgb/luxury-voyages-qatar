@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luxury Voyages Qatar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Figtree:wght@400;500;600&display=swap">
+<style>
+/* Layout: mobile-first single column; photo hero under a navy gradient, cream content bands, desert dune band, navy enquiry + footer. Brand commits to one look (no dark/light switch).
+   The six base colours, fonts and layout dials below are what the in-page editor changes; everything else derives from them. */
+:root {
+  --navy-900: #08111f;
+  --navy-800: #0e1b30;
+  --gold: #b89b5e;
+  --cream: #f6f1e7;
+  --ink: #1a2232;
+  --maroon: #8a1538;
+  --white: #ffffff;
+
+  --navy-700: color-mix(in srgb, var(--navy-800) 86%, white);
+  --gold-soft: color-mix(in srgb, var(--gold) 62%, white);
+  --gold-line: color-mix(in srgb, var(--gold) 50%, transparent);
+  --cream-line: color-mix(in srgb, var(--cream) 86%, var(--ink));
+  --ink-soft: color-mix(in srgb, var(--ink) 76%, var(--cream));
+  --cream-glow: color-mix(in srgb, var(--cream) 80%, transparent);
+
+  --f-display: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --f-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --f-body: "Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --radius: 2px;
+  --space: 1;
+  --hs: 1;
+  --hero-ov: 1;
+  --panel-pct: 90%;
+
+  --gutter: 20px;
+  --max: 1180px;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--navy-800);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--gold-soft); outline-offset: 3px; }
+.wrap { width: 100%; max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
+
+h1, h2, h3 { font-family: var(--f-display); font-weight: 400; text-transform: uppercase; letter-spacing: 0.04em; line-height: 1.02; margin: 0; text-wrap: balance; }
+.eyebrow { font-family: var(--f-body); font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0; }
+em.serif { font-family: var(--f-serif); font-style: italic; text-transform: none; letter-spacing: 0; font-weight: 400; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 50px; padding: 0 26px;
+  font: 600 13px/1 var(--f-body); letter-spacing: 0.16em; text-transform: uppercase;
+  text-decoration: none; border-radius: var(--radius); cursor: pointer; border: 1px solid transparent;
+  transition: background-color .2s, color .2s, border-color .2s;
+}
+.btn-gold { background: var(--gold); color: var(--navy-900); }
+.btn-gold:hover { background: var(--gold-soft); }
+.btn-line { border-color: rgba(255,255,255,.45); color: var(--white); background: transparent; }
+.btn-line:hover { border-color: var(--gold-soft); color: var(--gold-soft); }
+
+/* Header */
+.site-header {
+  position: absolute; inset: 0 0 auto 0; z-index: 10;
+  padding-top: env(safe-area-inset-top, 0px);
+}
+.nav-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 16px; }
+.brand img { height: 52px; width: auto; }
+.menu-toggle {
+  display: inline-flex; flex-direction: column; justify-content: center; gap: 6px;
+  width: 46px; height: 46px; padding: 0 11px; background: transparent;
+  border: 1px solid rgba(255,255,255,.35); border-radius: var(--radius); cursor: pointer;
+}
+.menu-toggle span { display: block; height: 1px; background: var(--white); }
+.nav-links {
+  position: absolute; top: 100%; left: var(--gutter); right: var(--gutter);
+  display: flex; flex-direction: column; gap: 2px; padding: 12px;
+  background: var(--navy-900); border-top: 1px solid var(--gold);
+  list-style: none; margin: 0;
+}
+.nav-links a { display: block; padding: 12px 10px; color: var(--white); text-decoration: none; font-size: 15px; letter-spacing: .06em; }
+.nav-links a:hover { color: var(--gold-soft); }
+.nav-links .btn { margin-top: 8px; color: var(--navy-900); }
+
+/* Hero */
+.hero {
+  position: relative; isolation: isolate; color: var(--white);
+  min-height: 640px; display: flex; align-items: flex-end;
+  padding-top: 120px; padding-bottom: 48px;
+}
+.hero-photo { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: 62% 60%; }
+.hero::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; opacity: var(--hero-ov);
+  background:
+    linear-gradient(180deg,
+      color-mix(in srgb, var(--navy-900) 82%, transparent) 0%,
+      color-mix(in srgb, var(--navy-900) 25%, transparent) 30%,
+      color-mix(in srgb, var(--navy-800) 55%, transparent) 58%,
+      color-mix(in srgb, var(--navy-900) 96%, transparent) 100%);
+}
+.hero-inner { display: grid; gap: 22px; }
+.hero h1 { font-size: calc(clamp(46px, 12vw, 104px) * var(--hs)); font-weight: 300; }
+.hero h1 em.serif { color: var(--gold-soft); font-size: 1.04em; }
+.hero p.lede { margin: 0; max-width: 34em; font-size: 17px; color: rgba(255,255,255,.86); }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero-meta {
+  display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 14px; padding-top: 16px;
+  border-top: 1px solid var(--gold-line);
+  font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.7);
+}
+.hero-meta b { color: var(--gold-soft); font-weight: 500; }
+
+/* Cream band */
+.band-cream { background: var(--cream); padding-block: calc(72px * var(--space)); }
+.section-head { display: grid; gap: 14px; margin-bottom: 40px; max-width: 640px; }
+.section-head h2 { font-size: calc(clamp(36px, 8vw, 60px) * var(--hs)); color: var(--navy-800); }
+.section-head p { margin: 0; color: var(--ink-soft); }
+
+/* Experiences */
+.exp-grid { display: grid; gap: 28px; }
+.exp {
+  display: grid; grid-template-rows: auto 1fr; background: var(--white);
+  border-top: 2px solid var(--gold); border-radius: var(--radius); overflow: hidden;
+}
+.exp figure { margin: 0; aspect-ratio: 4 / 3; overflow: hidden; max-width: 100%; }
+.exp figure img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s ease; }
+.exp:hover figure img { transform: scale(1.04); }
+.exp-body { display: flex; flex-direction: column; gap: 10px; padding: 22px 22px 24px; min-width: 0; }
+.exp-place { font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--maroon); }
+.exp h3 { font-size: 30px; color: var(--navy-800); }
+.exp p { margin: 0; color: var(--ink-soft); font-size: 15px; }
+.exp-facts {
+  display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: auto; padding-top: 14px;
+  border-top: 1px solid var(--cream-line);
+  font-size: 13px; color: var(--ink); font-variant-numeric: tabular-nums;
+}
+.exp-facts span::before { content: "·"; color: var(--gold); margin-right: 6px; }
+.exp-facts span:first-child::before { content: none; }
+
+/* Navy band (enquiry) */
+.band-navy { background: var(--navy-800); color: var(--white); padding-block: calc(76px * var(--space)); position: relative; overflow: hidden; }
+.band-navy .section-head h2 { color: var(--white); }
+.band-navy .section-head p { color: rgba(255,255,255,.72); }
+
+/* Desert: golden-hour dune photo, no colour overlay. Text takes the dunes' own shadow browns and multiplies into the sand so it reads as part of the landscape. */
+.desert {
+  --dune-ink: #3a1d0b;     /* deep shadow on the lee side of a dune */
+  --dune-ember: #8f3a10;   /* burnt-orange crest at sunset */
+  --dune-glow: rgba(255, 214, 150, .45);
+  position: relative; isolation: isolate; overflow: hidden; padding-block: calc(76px * var(--space)); background: #c98a4b; color: var(--dune-ink);
+}
+.desert-bg { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; object-fit: cover; object-position: 50% 32%; }
+.desert-head { max-width: 640px; display: grid; gap: 14px; margin-bottom: 40px; }
+.desert-head .eyebrow { color: var(--dune-ember); mix-blend-mode: multiply; }
+.desert-head h2 { font-size: calc(clamp(40px, 10vw, 76px) * var(--hs)); font-weight: 500; color: var(--dune-ink); mix-blend-mode: multiply; text-shadow: 0 0 30px var(--dune-glow); }
+.desert-head h2 em.serif { color: var(--dune-ember); }
+.desert-lede {
+  margin: 0; max-width: 46ch; font-size: 17px; color: var(--dune-ink);
+  background: color-mix(in srgb, var(--cream) var(--panel-pct), transparent); padding: 18px 20px; border-left: 3px solid var(--gold);
+}
+.activities { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.activities li {
+  display: grid; gap: 4px; padding: 16px 18px; min-width: 0;
+  border-top: 2px solid color-mix(in srgb, var(--dune-ink) 45%, transparent);
+  /* Light gold from the "Plan a desert day" button; a soft shadow keeps it legible on bright sand. */
+  --act-gold: color-mix(in srgb, var(--gold) 55%, white);
+  color: var(--act-gold);
+  text-shadow: 0 1px 2px rgba(58, 29, 11, .55), 0 0 14px rgba(58, 29, 11, .35);
+}
+.activities h3 { font-size: 22px; color: var(--act-gold); }
+.activities p { margin: 0; font-size: 14px; color: var(--act-gold); }
+.desert-foot { margin-top: 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+
+/* Process */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: step; }
+.steps li { display: grid; grid-template-columns: 56px 1fr; gap: 16px; padding-block: 24px; border-top: 1px solid var(--cream-line); counter-increment: step; }
+.steps li:last-child { border-bottom: 1px solid var(--cream-line); }
+.steps li::before { content: counter(step, decimal-leading-zero); font-family: var(--f-display); font-size: 34px; line-height: 1; color: var(--gold); }
+.steps h3 { font-size: 24px; color: var(--navy-800); margin-bottom: 6px; }
+.steps p { margin: 0; color: var(--ink-soft); max-width: 52ch; }
+
+/* Enquiry */
+.enquire { display: grid; gap: 40px; }
+.enquire-intro p { color: rgba(255,255,255,.75); max-width: 40ch; }
+.enquire-intro ul { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 10px; font-size: 15px; color: rgba(255,255,255,.85); }
+.enquire-intro li::before { content: ""; display: inline-block; width: 18px; height: 1px; background: var(--gold); vertical-align: middle; margin-right: 12px; }
+form.card { background: var(--cream); color: var(--ink); padding: 26px 22px; display: grid; gap: 16px; border-top: 3px solid var(--gold); border-radius: var(--radius); }
+.desert-lede { border-radius: var(--radius); }
+.field { display: grid; gap: 6px; min-width: 0; }
+.field label { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--navy-800); }
+.field input, .field select, .field textarea {
+  width: 100%; font: 400 16px/1.4 var(--f-body); color: var(--ink);
+  background: var(--white); border: 1px solid var(--cream-line); border-radius: var(--radius); padding: 12px 14px;
+}
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 25%, transparent); }
+.row-2 { display: grid; gap: 16px; }
+.form-note { font-size: 13px; color: var(--ink-soft); margin: 0; }
+.form-status { font-size: 14px; color: var(--navy-800); background: var(--white); border-left: 3px solid var(--gold); padding: 12px 14px; margin: 0; }
+
+/* Footer */
+footer { background: var(--navy-900); color: rgba(255,255,255,.7); padding-block: 48px 36px; font-size: 14px; }
+.foot { display: grid; gap: 28px; }
+.foot img { height: 64px; width: auto; }
+.foot h4 { margin: 0 0 10px; font: 600 12px/1 var(--f-body); letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+.foot ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+.foot a { text-decoration: none; }
+.foot a:hover { color: var(--gold-soft); }
+.credits { margin-top: 36px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.1); font-size: 12px; color: rgba(255,255,255,.5); }
+
+/* Tablet and up */
+@media (min-width: 760px) {
+  :root { --gutter: 40px; }
+  .menu-toggle { display: none; }
+  .nav-links { position: static; flex-direction: row; align-items: center; gap: 4px; padding: 0; background: none; border: 0; }
+  .nav-links[hidden] { display: flex !important; }
+  .nav-links .btn { margin: 0 0 0 12px; min-height: 42px; }
+  .brand img { height: 64px; }
+  .hero { min-height: 760px; padding-bottom: 72px; }
+  .hero-inner { max-width: 820px; }
+  .band-cream, .band-navy, .desert { padding-block: calc(104px * var(--space)); }
+  .exp-grid { grid-template-columns: repeat(2, 1fr); }
+  .activities { grid-template-columns: repeat(2, 1fr); }
+  .row-2 { grid-template-columns: 1fr 1fr; }
+  form.card { padding: 36px; }
+  .foot { grid-template-columns: 1.4fr 1fr 1fr; }
+}
+@media (min-width: 1060px) {
+  .exp-grid { grid-template-columns: repeat(4, 1fr); gap: 22px; }
+  .exp h3 { font-size: 27px; }
+  .activities { grid-template-columns: repeat(3, 1fr); }
+  .desert { padding-block: calc(128px * var(--space)); }
+  .enquire { grid-template-columns: 1fr 1.2fr; gap: 72px; align-items: start; }
+  .steps { grid-template-columns: repeat(3, 1fr); gap: 36px; }
+  .steps li { grid-template-columns: 1fr; border-bottom: 1px solid var(--cream-line); }
+}
+/* Text reveal: headings rise in word by word, other text blocks fade up. Resting state is always visible;
+   the animation only plays once an element is tagged .lvq-in (on load for the first screen, just before scrolling into view for the rest). */
+@keyframes lvq-rise {
+  from { opacity: 0; transform: translateY(.45em); filter: blur(4px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+.lvq-w { display: inline-block; }
+.lvq-in .lvq-w, .lvq-block.lvq-in {
+  animation: lvq-rise .75s cubic-bezier(.2, .7, .2, 1) both;
+  animation-delay: calc(var(--i, 0) * 70ms + var(--d, 0ms));
+}
+@media (prefers-reduced-motion: reduce) {
+  .lvq-in .lvq-w, .lvq-block.lvq-in { animation: none; }
+  html { scroll-behavior: auto; }
+  .exp figure img { transition: none; }
+}
+
+/* Sections switched off in the editor */
+body:not(.editing) main > section[data-off] { display: none; }
+
+/* ---------- In-page editor (only shown to people who can edit). Fixed colours so it stays readable whatever palette is chosen. ---------- */
+:root {
+  --ed-bg: #101826; --ed-bg-2: #182234; --ed-line: #2a3650; --ed-fg: #eef1f6; --ed-dim: #9aa6bb;
+  --ed-accent: #d9b871; --ed-ok: #5fc48a; --ed-bad: #f07a7a;
+}
+.ed-launch {
+  position: fixed; z-index: 60; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 0 18px;
+  font: 600 13px/1 var(--f-body), system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase;
+  background: var(--ed-bg); color: var(--ed-fg); border: 1px solid var(--ed-accent); border-radius: 999px; cursor: pointer;
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,.6);
+}
+.ed-launch:hover { background: var(--ed-bg-2); }
+.ed-launch svg { width: 16px; height: 16px; }
+
+body.editing [data-ek] { outline: 1px dashed color-mix(in srgb, var(--ed-accent) 70%, transparent); outline-offset: 3px; cursor: text; }
+body.editing [data-ek]:hover { outline-style: solid; }
+body.editing [data-ek]:focus { outline: 2px solid var(--ed-accent); outline-offset: 3px; }
+body.editing main > section[data-off] { opacity: .35; }
+body.editing .ed-flash { animation: edflash 1.2s ease; }
+@keyframes edflash { 0%,100% { box-shadow: none; } 30% { box-shadow: inset 0 0 0 4px var(--ed-accent); } }
+
+.ed-panel {
+  position: fixed; z-index: 70; inset: auto 0 0 0; height: 62vh; display: flex; flex-direction: column;
+  background: var(--ed-bg); color: var(--ed-fg); border-top: 1px solid var(--ed-accent);
+  font: 400 14px/1.45 "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  padding-bottom: env(safe-area-inset-bottom, 0px); box-shadow: 0 -20px 40px -20px rgba(0,0,0,.6);
+}
+.ed-panel * { box-sizing: border-box; }
+.ed-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--ed-line); }
+.ed-top strong { font-size: 14px; letter-spacing: .06em; text-transform: uppercase; }
+.ed-hint { margin: 0; padding: 10px 16px; font-size: 13px; color: var(--ed-dim); border-bottom: 1px solid var(--ed-line); }
+.ed-tabs { display: flex; gap: 2px; padding: 8px 10px 0; overflow-x: auto; border-bottom: 1px solid var(--ed-line); }
+.ed-tab { flex: none; padding: 9px 12px; background: none; border: 0; border-bottom: 2px solid transparent; color: var(--ed-dim); font-family: inherit; font-size: 12px; font-weight: 600; line-height: 1; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
+.ed-tab[aria-selected="true"] { color: var(--ed-fg); border-bottom-color: var(--ed-accent); }
+.ed-body { flex: 1; overflow-y: auto; padding: 16px; display: grid; gap: 18px; align-content: start; }
+.ed-group { display: grid; gap: 10px; }
+.ed-group h4 { margin: 0; font-size: 11px; font-weight: 600; line-height: 1; letter-spacing: .16em; text-transform: uppercase; color: var(--ed-accent); }
+.ed-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 10px; }
+.ed-row label { min-width: 0; }
+.ed-row small { display: block; color: var(--ed-dim); font-size: 12px; }
+.ed-panel input[type="color"] { width: 44px; height: 32px; padding: 0; border: 1px solid var(--ed-line); border-radius: 6px; background: none; cursor: pointer; }
+.ed-panel select, .ed-panel input[type="range"] { width: 100%; }
+.ed-panel select { padding: 8px 10px; border-radius: 6px; border: 1px solid var(--ed-line); background: var(--ed-bg-2); color: var(--ed-fg); font: inherit; }
+.ed-slider { display: grid; gap: 6px; }
+.ed-slider .ed-row output { font-variant-numeric: tabular-nums; color: var(--ed-dim); font-size: 12px; }
+.ed-panel input[type="range"] { accent-color: var(--ed-accent); }
+.ed-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 36px; padding: 0 12px; border-radius: 6px; border: 1px solid var(--ed-line); background: var(--ed-bg-2); color: var(--ed-fg); font-family: inherit; font-size: 12px; font-weight: 600; line-height: 1; letter-spacing: .04em; cursor: pointer; }
+.ed-btn:hover:not(:disabled) { border-color: var(--ed-accent); }
+.ed-btn:disabled { opacity: .45; cursor: not-allowed; }
+.ed-btn.primary { background: var(--ed-accent); color: #1a1407; border-color: var(--ed-accent); }
+.ed-btn.danger { color: var(--ed-bad); }
+.ed-btn.icon { width: 36px; padding: 0; }
+.ed-sec { display: grid; grid-template-columns: 1fr auto auto auto; align-items: center; gap: 6px; padding: 8px 10px; border: 1px solid var(--ed-line); border-radius: 8px; background: var(--ed-bg-2); }
+.ed-sec.off span { color: var(--ed-dim); text-decoration: line-through; }
+.ed-media { display: grid; grid-template-columns: 64px 1fr auto; align-items: center; gap: 12px; }
+.ed-media img, .ed-media .ed-vthumb { width: 64px; height: 44px; object-fit: cover; border-radius: 4px; background: var(--ed-bg-2); }
+.ed-media .ed-vthumb { display: grid; place-items: center; font-size: 11px; color: var(--ed-dim); }
+.ed-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.ed-chip { display: inline-flex; align-items: center; gap: 6px; padding: 5px 9px; border-radius: 999px; font-size: 12px; background: var(--ed-bg-2); border: 1px solid var(--ed-line); }
+.ed-chip b { font-weight: 600; }
+.ed-chip.ok b { color: var(--ed-ok); }
+.ed-chip.bad b { color: var(--ed-bad); }
+.ed-swatch { width: 14px; height: 14px; border-radius: 3px; border: 1px solid rgba(255,255,255,.25); display: inline-grid; place-items: center; font-size: 9px; font-weight: 700; }
+.ed-foot { display: grid; gap: 8px; padding: 12px 16px; border-top: 1px solid var(--ed-line); }
+.ed-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.ed-actions .grow { flex: 1; }
+.ed-status { margin: 0; font-size: 12px; color: var(--ed-dim); min-height: 1.2em; }
+.ed-status.ok { color: var(--ed-ok); }
+.ed-status.bad { color: var(--ed-bad); }
+@media (min-width: 980px) {
+  .ed-panel { inset: 0 0 0 auto; width: 360px; height: auto; border-top: 0; border-left: 1px solid var(--ed-accent); padding-top: env(safe-area-inset-top, 0px); }
+  body.editing { margin-right: 360px; }
+}
+@media (max-width: 979px) {
+  body.editing { padding-bottom: 62vh; }
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap nav-bar" style="position:relative">
+    <a class="brand" href="#top" aria-label="Luxury Voyages Qatar home"><img src="images/logo.png" alt="Luxury Voyages Qatar"></a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="nav-links" hidden>
+      <li><a href="#experiences">Experiences</a></li>
+      <li><a href="#desert">The Desert</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a class="btn btn-gold" href="#enquire">Enquire</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" data-section="hero" data-label="Hero">
+    <img class="hero-photo" data-img="hero" data-label="Hero photo" src="images/boats.jpg" alt="Traditional wooden dhows moored in Doha Bay at golden hour, with the Museum of Islamic Art and West Bay towers behind">
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Private experiences · Doha &amp; beyond</p>
+      <h1>Qatar, <em class="serif">privately</em> arranged</h1>
+      <p class="lede">Desert safaris to the Inland Sea, yachts out of The Pearl, and dhow cruises past the skyline at dusk. Every voyage is planned around your group, your dates and your pace.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold" href="#enquire">Plan your voyage</a>
+        <a class="btn btn-line" href="#experiences">View experiences</a>
+      </div>
+      <div class="hero-meta">
+        <span><b>25.29° N</b> Doha Bay</span>
+        <span>Private groups of 2–12</span>
+        <span>Arabic &amp; English guides</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-cream" id="experiences" data-section="experiences" data-label="Experiences">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Signature experiences</p>
+        <h2>Four ways to <em class="serif">see</em> Qatar</h2>
+        <p>Each one runs privately, with a dedicated host and a driver or captain who knows the route. Times shift with the season to catch the best light.</p>
+      </div>
+      <div class="exp-grid">
+        <article class="exp">
+          <figure><img data-img="exp-1" data-label="Experience 1" src="images/inland.jpg" alt="Pale sand dunes running down to the calm water of Khor Al Adaid" loading="lazy"></figure>
+          <div class="exp-body">
+            <span class="exp-place">Khor Al Adaid</span>
+            <h3>Inland Sea desert safari</h3>
+            <p>A private 4×4 across the southern dunes to where the desert meets the sea, timed so you reach the water at golden hour.</p>
+            <div class="exp-facts"><span>6 hours</span><span>Up to 6 guests</span><span>Hotel pickup</span></div>
+          </div>
+        </article>
+        <article class="exp">
+          <figure><img data-img="exp-2" data-label="Experience 2" src="images/pearl.jpg" alt="Aerial view over The Pearl-Qatar towards the turquoise Gulf" loading="lazy"></figure>
+          <div class="exp-body">
+            <span class="exp-place">The Pearl-Qatar</span>
+            <h3>Private yacht charter</h3>
+            <p>Leave Porto Arabia marina on a crewed yacht, swim off the sandbanks, and come back in as the Gulf turns gold.</p>
+            <div class="exp-facts"><span>4 hours</span><span>Up to 12 guests</span><span>Crew &amp; catering</span></div>
+          </div>
+        </article>
+        <article class="exp">
+          <figure><img data-img="exp-3" data-label="Experience 3" src="images/moon.jpg" alt="Doha's West Bay skyline lit up at night under a full moon" loading="lazy"></figure>
+          <div class="exp-body">
+            <span class="exp-place">Doha Corniche</span>
+            <h3>Skyline dhow at dusk</h3>
+            <p>A restored wooden dhow along the Corniche as the West Bay towers light up, with dinner served on deck.</p>
+            <div class="exp-facts"><span>3 hours</span><span>Up to 10 guests</span><span>Sunset departure</span></div>
+          </div>
+        </article>
+        <article class="exp">
+          <figure><img data-img="exp-4" data-label="Experience 4" src="images/desert.jpg" alt="Tyre tracks across wide sand dunes in the Qatari desert" loading="lazy"></figure>
+          <div class="exp-body">
+            <span class="exp-place">Sealine dunes</span>
+            <h3>Dunes &amp; desert camp</h3>
+            <p>Dune driving with an experienced guide, then a private Bedouin-style camp with Arabic coffee, a grill and a sky full of stars.</p>
+            <div class="exp-facts"><span>Overnight</span><span>Up to 8 guests</span><span>Private camp</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="desert" id="desert" data-section="desert" data-label="The Desert">
+    <img class="desert-bg" data-img="desert-bg" data-label="Desert background" src="images/dunes.jpg" alt="" aria-hidden="true">
+    <div class="wrap">
+      <div class="desert-head">
+        <p class="eyebrow">The heart of Qatar</p>
+        <h2>The <em class="serif">desert</em> is the adventure</h2>
+        <p class="desert-lede">Past the towers of Doha, the land turns to gold. Dunes run south for kilometres to Khor Al Adaid, where the sand meets the sea. For most of our guests this is the part of Qatar they remember longest, and it is where we spend most of our days.</p>
+      </div>
+      <ul class="activities">
+        <li><h3>Dune bashing</h3><p>Ride the high dunes near Sealine in a private 4×4 with a licensed desert driver.</p></li>
+        <li><h3>Inland Sea crossing</h3><p>Drive over the dunes to Khor Al Adaid and swim where the desert meets the Gulf.</p></li>
+        <li><h3>Sandboarding</h3><p>Board down steep dune faces, with a guide and kit sized for adults and children.</p></li>
+        <li><h3>Camel trekking</h3><p>A slow ride across the sand at golden hour, led by local handlers.</p></li>
+        <li><h3>Quad biking</h3><p>Self-drive quads on marked dune trails, with a guide riding alongside.</p></li>
+        <li><h3>Stargazing camp</h3><p>Arabic coffee, a fire and a dinner under clear desert skies, far from city lights.</p></li>
+      </ul>
+      <div class="desert-foot">
+        <a class="btn btn-gold" href="#enquire">Plan a desert day</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band-cream" id="how" data-section="how" data-label="How it works">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">How it works</p>
+        <h2>From enquiry to <em class="serif">voyage</em></h2>
+      </div>
+      <ol class="steps">
+        <li><div><h3>Tell us your dates</h3><p>Share when you're in Qatar, how many are travelling and what interests you. A short message is enough.</p></div></li>
+        <li><div><h3>Receive your itinerary</h3><p>Your host builds a private plan with timings, vehicles or vessels, and a clear price per group.</p></div></li>
+        <li><div><h3>Set off</h3><p>We collect you from your hotel or residence. Your host stays on WhatsApp throughout the day.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band-navy" id="enquire" data-section="enquire" data-label="Enquiry form">
+    <div class="wrap enquire">
+      <div class="enquire-intro">
+        <div class="section-head" style="margin-bottom:0">
+          <p class="eyebrow">Enquire</p>
+          <h2>Start <em class="serif">planning</em></h2>
+          <p>Tell us a little about your trip and we'll come back with a private itinerary.</p>
+        </div>
+        <ul>
+          <li>Hotel pickup anywhere in Doha</li>
+          <li>Hosts fluent in Arabic and English</li>
+          <li>Itineraries adjusted for the summer heat</li>
+        </ul>
+      </div>
+      <form class="card" id="enquiry-form" novalidate>
+        <div class="row-2">
+          <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        </div>
+        <div class="row-2">
+          <div class="field"><label for="f-date">Preferred date</label><input id="f-date" name="date" type="date"></div>
+          <div class="field"><label for="f-guests">Guests</label>
+            <select id="f-guests" name="guests"><option>2</option><option>3–4</option><option>5–8</option><option>9–12</option></select></div>
+        </div>
+        <div class="field"><label for="f-exp">Experience</label>
+          <select id="f-exp" name="experience">
+            <option>Inland Sea desert safari</option>
+            <option>Private yacht charter</option>
+            <option>Skyline dhow at dusk</option>
+            <option>Dunes &amp; desert camp</option>
+            <option>Not sure yet, help me choose</option>
+          </select></div>
+        <div class="field"><label for="f-notes">Anything we should know?</label><textarea id="f-notes" name="notes" rows="3"></textarea></div>
+        <button class="btn btn-gold" type="submit">Send enquiry</button>
+        <p class="form-note" id="form-note">This is a preview build, so enquiries are not sent anywhere yet.</p>
+        <p class="form-status" id="form-status" hidden></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><img src="images/logo.png" alt="Luxury Voyages Qatar"><p style="max-width:32ch;margin:16px 0 0">Private desert, sea and city experiences across Qatar.</p></div>
+      <div><h4>Experiences</h4><ul><li><a href="#experiences">Inland Sea safari</a></li><li><a href="#experiences">Yacht charter</a></li><li><a href="#experiences">Skyline dhow</a></li><li><a href="#experiences">Desert camp</a></li></ul></div>
+      <div><h4>Based in</h4><ul><li>Doha, State of Qatar</li><li>Open daily, 8:00–22:00 Qatar time (GMT+3)</li><li id="doha-clock" hidden></li></ul></div>
+    </div>
+    <p class="credits">© 2026 Luxury Voyages Qatar. Photography from Unsplash, including Darshan Gajara, rishi, Akbar Nemati and Deepak Siva.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var toggle = document.getElementById('menu-toggle');
+  var links = document.getElementById('nav-links');
+  toggle.addEventListener('click', function () {
+    var open = links.hidden;
+    links.hidden = !open;
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  links.addEventListener('click', function (e) {
+    if (e.target.closest('a') && window.matchMedia('(max-width: 759px)').matches) {
+      links.hidden = true; toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Text reveal on load and on scroll.
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    // Split headings into words (text nodes only, so <em> phrases stay intact).
+    document.querySelectorAll('main h1, main h2').forEach(function (h) {
+      var n = 0;
+      Array.prototype.slice.call(h.childNodes).forEach(function (node) {
+        if (node.nodeType === 3) {
+          var frag = document.createDocumentFragment();
+          node.textContent.split(/(\s+)/).forEach(function (part) {
+            if (!part) return;
+            if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+            var s = document.createElement('span');
+            s.className = 'lvq-w'; s.style.setProperty('--i', n++); s.textContent = part;
+            frag.appendChild(s);
+          });
+          h.replaceChild(frag, node);
+        } else if (node.nodeType === 1) {
+          node.classList.add('lvq-w'); node.style.setProperty('--i', n++);
+        }
+      });
+    });
+
+    var blockSel = '.nav-bar, .eyebrow, .hero .lede, .hero-ctas, .hero-meta, .section-head > p:not(.eyebrow), .desert-lede, .exp, .activities li, .desert-foot, .steps li, .enquire-intro ul, form.card, .foot > div, .credits';
+    document.querySelectorAll(blockSel).forEach(function (el) {
+      el.classList.add('lvq-block');
+      // Stagger siblings in a grid or list.
+      var sibs = Array.prototype.filter.call(el.parentNode.children, function (c) { return c.matches(blockSel); });
+      el.style.setProperty('--i', Math.max(0, sibs.indexOf(el)));
+    });
+    // Headings follow their eyebrow; paragraphs follow their heading.
+    document.querySelectorAll('.section-head > p:not(.eyebrow), .hero .lede').forEach(function (el) { el.style.setProperty('--d', '240ms'); });
+    document.querySelectorAll('.hero-ctas').forEach(function (el) { el.style.setProperty('--d', '380ms'); });
+    document.querySelectorAll('.hero-meta').forEach(function (el) { el.style.setProperty('--d', '520ms'); });
+    document.querySelectorAll('main h1, main h2').forEach(function (el) { el.style.setProperty('--d', '120ms'); });
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('lvq-in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px 12% 0px' });
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    document.querySelectorAll('main h1, main h2, .lvq-block').forEach(function (el) {
+      // Anything on the first screen animates straight away; the rest waits for scroll.
+      if (el.getBoundingClientRect().top < vh * 1.1) el.classList.add('lvq-in');
+      else io.observe(el);
+    });
+  }
+
+  // Live Doha time with open/closed status (hours 8:00–22:00, Asia/Qatar).
+  var clock = document.getElementById('doha-clock');
+  function tickClock() {
+    try {
+      var parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Qatar', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date());
+      var h = +parts.find(function (p) { return p.type === 'hour'; }).value % 24;
+      var m = parts.find(function (p) { return p.type === 'minute'; }).value;
+      var open = h >= 8 && h < 22;
+      clock.textContent = 'Now ' + String(h).padStart(2, '0') + ':' + m + ' in Doha · ' + (open ? 'Open now' : 'Closed, opens 8:00');
+      clock.hidden = false;
+    } catch (e) { clock.hidden = true; }
+  }
+  tickClock();
+  setInterval(tickClock, 30000);
+
+  var form = document.getElementById('enquiry-form');
+  var status = document.getElementById('form-status');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = form.elements.name.value.trim();
+    var email = form.elements.email.value.trim();
+    status.hidden = false;
+    if (!name || !email || !form.elements.email.checkValidity()) {
+      status.textContent = 'Add your name and a valid email address so we can reply.';
+      return;
+    }
+    status.textContent = 'Thanks, ' + name.split(' ')[0] + '. Your enquiry for ' + form.elements.experience.value.toLowerCase() + ' is ready. Sending will work once the site goes live.';
+  });
+})();
+</script>
+
+</body>
+</html>

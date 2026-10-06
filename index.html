@@ -52,6 +52,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 img { max-width: 100%; display: block; }
+/* Anything marked hidden stays hidden, even when a class gives it a display value (the phone menu relies on this). */
+[hidden] { display: none !important; }
 a { color: inherit; }
 :focus-visible { outline: 2px solid var(--gold-soft); outline-offset: 3px; }
 .wrap { width: 100%; max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }

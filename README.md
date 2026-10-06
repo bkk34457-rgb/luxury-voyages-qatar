@@ -23,4 +23,4 @@ It's a static site with no build step. Open `index.html` in a browser, or turn o
 
 ## Photo credits
 
-Photography from [Unsplash](https://unsplash.com), including work by Darshan Gajara, rishi, Akbar Nemati and Deepak Siva.
+Photography from [Unsplash](https://unsplash.com), including work by Darshan Gajara, rishi, Akbar Nemati and Fasrin Ahamad.

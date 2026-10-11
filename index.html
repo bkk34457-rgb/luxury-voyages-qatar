@@ -189,18 +189,52 @@ em.serif { font-family: var(--f-serif); font-style: italic; text-transform: none
 .desert-foot { margin-top: 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
 
 /* Beyond Qatar: international feature (photo + details), stacked on phones, side by side on desktop */
-.intl { display: grid; gap: 32px; }
-.intl-photo { margin: 0; aspect-ratio: 4 / 3; max-width: 100%; overflow: hidden; border-radius: var(--radius); }
-.intl-photo img { width: 100%; height: 100%; object-fit: cover; }
-.intl-body { display: grid; gap: 22px; min-width: 0; }
-.intl-body .section-head { margin-bottom: 0; }
-.intl-facts { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
-.intl-facts li { display: grid; gap: 2px; padding-block: 14px; border-top: 1px solid var(--gold-line); }
-.intl-facts li:last-child { border-bottom: 1px solid var(--gold-line); }
-.intl-facts b { font: 600 12px/1.3 var(--f-body); letter-spacing: .16em; text-transform: uppercase; color: var(--gold-soft); }
-.intl-facts span { color: rgba(255,255,255,.82); font-size: 15px; }
-.intl-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
-.intl-more { margin: 0; font-size: 14px; color: rgba(255,255,255,.65); }
+/* Discover the world: two trip cards; the Maldives card is the featured (wider) one on desktop */
+.world-grid { display: grid; gap: 24px; }
+.trip { display: grid; grid-template-rows: auto 1fr; min-width: 0; background: var(--navy-700); border-radius: calc(var(--radius) + 4px); overflow: hidden; }
+.trip-photo { position: relative; margin: 0; aspect-ratio: 3 / 2; max-width: 100%; overflow: hidden; }
+.trip-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s ease; }
+.trip:hover .trip-photo img { transform: scale(1.03); }
+.trip-badge {
+  position: absolute; top: 14px; left: 14px; padding: 7px 12px; border-radius: 999px;
+  background: var(--gold); color: var(--navy-900);
+  font: 600 11px/1 var(--f-body); letter-spacing: .14em; text-transform: uppercase;
+}
+.trip-body { display: flex; flex-direction: column; gap: 14px; padding: 22px 22px 26px; min-width: 0; }
+.trip-place { font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-soft); }
+.trip h3 { font-size: clamp(30px, 7vw, 40px); color: var(--white); }
+.trip p { margin: 0; color: rgba(255,255,255,.8); max-width: 52ch; }
+.trip-facts { margin: 0; display: grid; gap: 0; }
+.trip-facts div { display: grid; grid-template-columns: 7.5em 1fr; gap: 12px; padding-block: 11px; border-top: 1px solid rgba(255,255,255,.1); }
+.trip-facts dt { font-size: 13px; color: var(--gold-soft); }
+.trip-facts dd { margin: 0; font-size: 15px; color: rgba(255,255,255,.88); min-width: 0; }
+.trip-body .btn { margin-top: auto; align-self: flex-start; }
+.world-note { margin: 28px 0 0; color: rgba(255,255,255,.7); }
+.world-note a { color: var(--gold-soft); }
+
+/* Your trip, your way: tap-to-choose preferences that fill in the enquiry */
+.band-sand { background: color-mix(in srgb, var(--gold) 16%, var(--cream)); padding-block: calc(72px * var(--space)); }
+.prefs { display: grid; gap: 28px; }
+.pref { border: 0; margin: 0; padding: 0; min-width: 0; display: grid; gap: 12px; }
+.pref legend { padding: 0; margin-bottom: 12px; font: 400 22px/1.1 var(--f-display); letter-spacing: .04em; text-transform: uppercase; color: var(--navy-800); }
+.pref legend small { font: 400 13px/1 var(--f-body); letter-spacing: 0; text-transform: none; color: var(--ink-soft); margin-left: 6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  min-height: 42px; padding: 0 16px; border-radius: 999px; cursor: pointer;
+  font: 500 14px/1 var(--f-body); color: var(--navy-800);
+  background: color-mix(in srgb, var(--white) 70%, transparent); border: 1px solid color-mix(in srgb, var(--navy-800) 22%, transparent);
+  transition: background-color .15s, color .15s, border-color .15s;
+}
+.chip:hover { border-color: var(--navy-800); }
+.chip[aria-pressed="true"] { background: var(--navy-800); color: var(--white); border-color: var(--navy-800); }
+.prefs-summary {
+  margin-top: 36px; padding: 20px 22px; border-radius: calc(var(--radius) + 4px);
+  background: var(--navy-800); color: var(--white);
+  display: grid; gap: 16px;
+}
+.prefs-summary p { margin: 0; min-width: 0; }
+#prefs-text { color: rgba(255,255,255,.88); }
+#prefs-done { font-size: 14px; color: var(--gold-soft); }
 
 /* Process */
 .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: step; }
@@ -251,6 +285,9 @@ footer { background: var(--navy-900); color: rgba(255,255,255,.7); padding-block
   .band-cream, .band-navy, .desert { padding-block: calc(104px * var(--space)); }
   .exp-grid { grid-template-columns: repeat(2, 1fr); }
   .activities { grid-template-columns: repeat(2, 1fr); }
+  .band-sand { padding-block: calc(104px * var(--space)); }
+  .prefs { grid-template-columns: 1fr 1fr; gap: 36px 48px; }
+  .pref.wide { grid-column: 1 / -1; }
   .row-2 { grid-template-columns: 1fr 1fr; }
   form.card { padding: 36px; }
   .foot { grid-template-columns: 1.4fr 1fr 1fr; }
@@ -260,8 +297,10 @@ footer { background: var(--navy-900); color: rgba(255,255,255,.7); padding-block
   .exp h3 { font-size: 27px; }
   .activities { grid-template-columns: repeat(3, 1fr); }
   .desert { padding-block: calc(128px * var(--space)); }
-  .intl { grid-template-columns: 1.15fr 1fr; gap: 64px; align-items: center; }
-  .intl-photo { aspect-ratio: 5 / 4; }
+  .world-grid { grid-template-columns: 1.3fr 1fr; gap: 28px; }
+  .trip.featured .trip-photo { aspect-ratio: 16 / 10; }
+  .trip-body { padding: 28px 30px 32px; }
+  .prefs-summary { grid-template-columns: 1fr auto; align-items: center; padding: 24px 28px; }
   .enquire { grid-template-columns: 1fr 1.2fr; gap: 72px; align-items: start; }
   .steps { grid-template-columns: repeat(3, 1fr); gap: 36px; }
   .steps li { grid-template-columns: 1fr; border-bottom: 1px solid var(--cream-line); }
@@ -293,7 +332,7 @@ footer { background: var(--navy-900); color: rgba(255,255,255,.7); padding-block
     <ul class="nav-links" id="nav-links" hidden>
       <li><a href="#experiences">Experiences</a></li>
       <li><a href="#desert">The Desert</a></li>
-      <li><a href="#maldives">Maldives</a></li>
+      <li><a href="#world">Destinations</a></li>
       <li><a href="#how">How it works</a></li>
       <li><a class="btn btn-gold" href="#enquire">Enquire</a></li>
     </ul>
@@ -386,25 +425,48 @@ footer { background: var(--navy-900); color: rgba(255,255,255,.7); padding-block
     </div>
   </section>
 
-  <section class="band-navy" id="maldives">
-    <div class="wrap intl">
-      <figure class="intl-photo"><img src="images/maldives.jpg" alt="Aerial view of overwater villas on a turquoise lagoon in the Maldives" loading="lazy"></figure>
-      <div class="intl-body">
-        <div class="section-head">
-          <h2>The <em class="serif">Maldives</em>, from Doha</h2>
-          <p>Our first trip outside Qatar. The direct flight from Doha takes under five hours, and we arrange everything from your front door to your villa.</p>
-        </div>
-        <ul class="intl-facts">
-          <li><b>Getting there</b><span>Direct flight from Hamad International to Malé, under 5 hours</span></li>
-          <li><b>Arrival</b><span>Seaplane or speedboat straight to your island resort</span></li>
-          <li><b>Stay</b><span>Private overwater villa, 4 to 7 nights</span></li>
-          <li><b>Your host</b><span>The same host on WhatsApp from Doha pickup to your return</span></li>
-        </ul>
-        <div class="intl-cta">
-          <a class="btn btn-gold" href="#enquire" data-pick="Maldives escape (international)">Plan a Maldives escape</a>
-          <p class="intl-more">Other destinations on request.</p>
-        </div>
+  <section class="band-navy" id="world">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Discover the <em class="serif">world</em></h2>
+        <p>Island trips beyond Qatar, planned from Doha with the same private host who looks after you at home. We arrange everything from your front door to your villa.</p>
       </div>
+      <div class="world-grid">
+        <article class="trip featured">
+          <figure class="trip-photo">
+            <img src="images/maldives.jpg" alt="Aerial view of overwater villas on a turquoise lagoon in the Maldives" loading="lazy">
+            <span class="trip-badge">New · Exclusive</span>
+          </figure>
+          <div class="trip-body">
+            <span class="trip-place">Maldives</span>
+            <h3>Our newest exclusive trip</h3>
+            <p>A private overwater villa on a coral lagoon, reached by seaplane. We hold a small number of places each season for our guests only.</p>
+            <dl class="trip-facts">
+              <div><dt>Flight</dt><dd>Direct from Doha to Malé, under 5 hours</dd></div>
+              <div><dt>Arrival</dt><dd>Seaplane or speedboat to your island</dd></div>
+              <div><dt>Stay</dt><dd>Overwater villa, 4 to 7 nights</dd></div>
+            </dl>
+            <a class="btn btn-gold" href="#enquire" data-pick="Maldives escape (international)">Plan a Maldives escape</a>
+          </div>
+        </article>
+        <article class="trip">
+          <figure class="trip-photo">
+            <img src="images/seychelles.jpg" alt="Granite boulders in the clear shallow water at Anse Source d'Argent, La Digue, Seychelles" loading="lazy">
+          </figure>
+          <div class="trip-body">
+            <span class="trip-place">Seychelles</span>
+            <h3>Island hopping</h3>
+            <p>Granite beaches and quiet coves across Mahé, Praslin and La Digue, with a private catamaran between the islands.</p>
+            <dl class="trip-facts">
+              <div><dt>Flight</dt><dd>Direct from Doha to Mahé, around 5 hours</dd></div>
+              <div><dt>Getting around</dt><dd>Private catamaran between islands</dd></div>
+              <div><dt>Stay</dt><dd>Beach villas, 6 to 8 nights</dd></div>
+            </dl>
+            <a class="btn btn-line" href="#enquire" data-pick="Seychelles island hopping (international)">Plan a Seychelles trip</a>
+          </div>
+        </article>
+      </div>
+      <p class="world-note">Somewhere else in mind? <a href="#your-way">Tell us how you'd like to travel</a> and we'll plan it.</p>
     </div>
   </section>
 
@@ -418,6 +480,72 @@ footer { background: var(--navy-900); color: rgba(255,255,255,.7); padding-block
         <li><div><h3>Receive your itinerary</h3><p>Your host builds a private plan with timings, vehicles or vessels, and a clear price per group.</p></div></li>
         <li><div><h3>Set off</h3><p>We collect you from your hotel or residence. Your host stays on WhatsApp throughout the day.</p></div></li>
       </ol>
+    </div>
+  </section>
+
+  <section class="band-sand" id="your-way">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Let us know how you'd like your trip</h2>
+        <p>Tap whatever suits you. We'll add your choices to the enquiry form so your host can shape the trip before you speak.</p>
+      </div>
+      <div class="prefs" id="prefs">
+        <fieldset class="pref" data-single>
+          <legend>Who's travelling</legend>
+          <div class="chips">
+            <button class="chip" type="button" aria-pressed="false">Just me</button>
+            <button class="chip" type="button" aria-pressed="false">Couple</button>
+            <button class="chip" type="button" aria-pressed="false">Family with children</button>
+            <button class="chip" type="button" aria-pressed="false">Friends</button>
+            <button class="chip" type="button" aria-pressed="false">Company team</button>
+          </div>
+        </fieldset>
+        <fieldset class="pref" data-single>
+          <legend>Pace</legend>
+          <div class="chips">
+            <button class="chip" type="button" aria-pressed="false">Slow and easy</button>
+            <button class="chip" type="button" aria-pressed="false">A bit of everything</button>
+            <button class="chip" type="button" aria-pressed="false">Full of adventure</button>
+          </div>
+        </fieldset>
+        <fieldset class="pref" data-single>
+          <legend>Trip length</legend>
+          <div class="chips">
+            <button class="chip" type="button" aria-pressed="false">Half a day</button>
+            <button class="chip" type="button" aria-pressed="false">A full day</button>
+            <button class="chip" type="button" aria-pressed="false">2 to 3 days</button>
+            <button class="chip" type="button" aria-pressed="false">A week or more</button>
+          </div>
+        </fieldset>
+        <fieldset class="pref">
+          <legend>Where you'd like to stay <small>pick any</small></legend>
+          <div class="chips">
+            <button class="chip" type="button" aria-pressed="false">Hotel in Doha</button>
+            <button class="chip" type="button" aria-pressed="false">Desert camp</button>
+            <button class="chip" type="button" aria-pressed="false">On a yacht</button>
+            <button class="chip" type="button" aria-pressed="false">Overwater villa</button>
+            <button class="chip" type="button" aria-pressed="false">Beach villa</button>
+          </div>
+        </fieldset>
+        <fieldset class="pref wide">
+          <legend>Extras <small>pick any</small></legend>
+          <div class="chips">
+            <button class="chip" type="button" aria-pressed="false">Private chef</button>
+            <button class="chip" type="button" aria-pressed="false">Photographer</button>
+            <button class="chip" type="button" aria-pressed="false">Spa time</button>
+            <button class="chip" type="button" aria-pressed="false">Birthday or anniversary set-up</button>
+            <button class="chip" type="button" aria-pressed="false">Activities for children</button>
+            <button class="chip" type="button" aria-pressed="false">Step-free access</button>
+          </div>
+        </fieldset>
+      </div>
+      <div class="prefs-summary">
+        <div>
+          <p id="prefs-text">Nothing picked yet. Choose a few options above.</p>
+          <p id="prefs-done" hidden>Added to your enquiry below.</p>
+        </div>
+        <button class="btn btn-gold" type="button" id="prefs-add">Add to my enquiry</button>
+      </div>
     </div>
   </section>
 
@@ -451,6 +579,7 @@ footer { background: var(--navy-900); color: rgba(255,255,255,.7); padding-block
             <option>Skyline dhow at dusk</option>
             <option>Dunes &amp; desert camp</option>
             <option>Maldives escape (international)</option>
+            <option>Seychelles island hopping (international)</option>
             <option>Not sure yet, help me choose</option>
           </select></div>
         <div class="field"><label for="f-notes">Anything we should know?</label><textarea id="f-notes" name="notes" rows="3"></textarea></div>
@@ -469,7 +598,7 @@ footer { background: var(--navy-900); color: rgba(255,255,255,.7); padding-block
       <div><h4>Experiences</h4><ul><li><a href="#experiences">Inland Sea safari</a></li><li><a href="#experiences">Yacht charter</a></li><li><a href="#experiences">Skyline dhow</a></li><li><a href="#experiences">Desert camp</a></li></ul></div>
       <div><h4>Based in</h4><ul><li>Doha, State of Qatar</li><li>Open daily, 8:00–22:00 Qatar time (GMT+3)</li><li id="doha-clock" hidden></li></ul></div>
     </div>
-    <p class="credits">© 2026 Luxury Voyages Qatar. Photography from Unsplash, including Darshan Gajara, rishi, Akbar Nemati, Fasrin Ahamad and Rayyu Maldives.</p>
+    <p class="credits">© 2026 Luxury Voyages Qatar. Photography from Unsplash, including Darshan Gajara, rishi, Akbar Nemati, Fasrin Ahamad, Rayyu Maldives and Mike Stettler.</p>
   </div>
 </footer>
 
@@ -511,7 +640,7 @@ footer { background: var(--navy-900); color: rgba(255,255,255,.7); padding-block
       });
     });
 
-    var blockSel = '.nav-bar, .eyebrow, .hero .lede, .hero-ctas, .hero-meta, .section-head > p:not(.eyebrow), .desert-lede, .exp, .activities li, .desert-foot, .intl-photo, .intl-facts li, .intl-cta, .steps li, .enquire-intro ul, form.card, .foot > div, .credits';
+    var blockSel = '.nav-bar, .eyebrow, .hero .lede, .hero-ctas, .hero-meta, .section-head > p:not(.eyebrow), .desert-lede, .exp, .activities li, .desert-foot, .trip, .world-note, .pref, .prefs-summary, .steps li, .enquire-intro ul, form.card, .foot > div, .credits';
     document.querySelectorAll(blockSel).forEach(function (el) {
       el.classList.add('lvq-block');
       // Stagger siblings in a grid or list.
@@ -557,6 +686,45 @@ footer { background: var(--navy-900); color: rgba(255,255,255,.7); padding-block
   // Buttons like "Plan a Maldives escape" pre-select their experience in the form.
   document.querySelectorAll('[data-pick]').forEach(function (a) {
     a.addEventListener('click', function () { form.elements.experience.value = a.getAttribute('data-pick'); });
+  });
+
+  // Trip preferences: chips toggle (one per group where data-single), summary updates, and
+  // "Add to my enquiry" writes a single "Trip preferences:" line into the notes field.
+  var prefs = document.getElementById('prefs');
+  var prefsText = document.getElementById('prefs-text');
+  var prefsDone = document.getElementById('prefs-done');
+  var notes = form.elements.notes;
+  function chosen() {
+    var out = [];
+    prefs.querySelectorAll('.pref').forEach(function (fs) {
+      var picks = Array.prototype.map.call(fs.querySelectorAll('.chip[aria-pressed="true"]'), function (c) { return c.textContent; });
+      if (picks.length) out.push(fs.querySelector('legend').firstChild.textContent.trim() + ': ' + picks.join(', '));
+    });
+    return out;
+  }
+  function renderPrefs() {
+    var c = chosen();
+    prefsText.textContent = c.length ? c.join(' · ') : 'Nothing picked yet. Choose a few options above.';
+    prefsDone.hidden = true;
+  }
+  prefs.addEventListener('click', function (e) {
+    var chip = e.target.closest('.chip');
+    if (!chip) return;
+    var on = chip.getAttribute('aria-pressed') !== 'true';
+    if (on && chip.closest('.pref').hasAttribute('data-single')) {
+      chip.closest('.chips').querySelectorAll('.chip').forEach(function (c) { c.setAttribute('aria-pressed', 'false'); });
+    }
+    chip.setAttribute('aria-pressed', String(on));
+    renderPrefs();
+  });
+  document.getElementById('prefs-add').addEventListener('click', function () {
+    var c = chosen();
+    if (!c.length) { prefsText.textContent = 'Pick at least one option first.'; return; }
+    var line = 'Trip preferences: ' + c.join('; ');
+    var rest = notes.value.split('\n').filter(function (l) { return l.indexOf('Trip preferences:') !== 0; }).join('\n').trim();
+    notes.value = rest ? rest + '\n' + line : line;
+    prefsDone.hidden = false;
+    document.getElementById('enquire').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   });
   form.addEventListener('submit', function (e) {
     e.preventDefault();

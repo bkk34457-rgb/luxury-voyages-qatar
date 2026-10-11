@@ -187,6 +187,20 @@ em.serif { font-family: var(--f-serif); font-style: italic; text-transform: none
 .activities p { margin: 0; font-size: 14px; color: var(--act-gold); }
 .desert-foot { margin-top: 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
 
+/* Beyond Qatar: international feature (photo + details), stacked on phones, side by side on desktop */
+.intl { display: grid; gap: 32px; }
+.intl-photo { margin: 0; aspect-ratio: 4 / 3; max-width: 100%; overflow: hidden; border-top: 2px solid var(--gold); border-radius: var(--radius); }
+.intl-photo img { width: 100%; height: 100%; object-fit: cover; }
+.intl-body { display: grid; gap: 22px; min-width: 0; }
+.intl-body .section-head { margin-bottom: 0; }
+.intl-facts { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.intl-facts li { display: grid; gap: 2px; padding-block: 14px; border-top: 1px solid var(--gold-line); }
+.intl-facts li:last-child { border-bottom: 1px solid var(--gold-line); }
+.intl-facts b { font: 600 12px/1.3 var(--f-body); letter-spacing: .16em; text-transform: uppercase; color: var(--gold-soft); }
+.intl-facts span { color: rgba(255,255,255,.82); font-size: 15px; }
+.intl-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.intl-more { margin: 0; font-size: 14px; color: rgba(255,255,255,.65); }
+
 /* Process */
 .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: step; }
 .steps li { display: grid; grid-template-columns: 56px 1fr; gap: 16px; padding-block: 24px; border-top: 1px solid var(--cream-line); counter-increment: step; }
@@ -245,6 +259,8 @@ footer { background: var(--navy-900); color: rgba(255,255,255,.7); padding-block
   .exp h3 { font-size: 27px; }
   .activities { grid-template-columns: repeat(3, 1fr); }
   .desert { padding-block: calc(128px * var(--space)); }
+  .intl { grid-template-columns: 1.15fr 1fr; gap: 64px; align-items: center; }
+  .intl-photo { aspect-ratio: 5 / 4; }
   .enquire { grid-template-columns: 1fr 1.2fr; gap: 72px; align-items: start; }
   .steps { grid-template-columns: repeat(3, 1fr); gap: 36px; }
   .steps li { grid-template-columns: 1fr; border-bottom: 1px solid var(--cream-line); }
@@ -356,6 +372,7 @@ body.editing .ed-flash { animation: edflash 1.2s ease; }
     <ul class="nav-links" id="nav-links" hidden>
       <li><a href="#experiences">Experiences</a></li>
       <li><a href="#desert">The Desert</a></li>
+      <li><a href="#maldives">Maldives</a></li>
       <li><a href="#how">How it works</a></li>
       <li><a class="btn btn-gold" href="#enquire">Enquire</a></li>
     </ul>
@@ -451,6 +468,29 @@ body.editing .ed-flash { animation: edflash 1.2s ease; }
     </div>
   </section>
 
+  <section class="band-navy" id="maldives" data-section="maldives" data-label="Beyond Qatar">
+    <div class="wrap intl">
+      <figure class="intl-photo"><img data-img="maldives" data-label="Maldives photo" src="images/maldives.jpg" alt="Aerial view of overwater villas on a turquoise lagoon in the Maldives" loading="lazy"></figure>
+      <div class="intl-body">
+        <div class="section-head">
+          <p class="eyebrow">Beyond Qatar</p>
+          <h2>The <em class="serif">Maldives</em>, arranged from Doha</h2>
+          <p>Our first voyage abroad. A direct flight from Doha has you on a coral lagoon in under five hours, and we plan every step between your front door and your villa.</p>
+        </div>
+        <ul class="intl-facts">
+          <li><b>Getting there</b><span>Direct flight from Hamad International to Malé, under 5 hours</span></li>
+          <li><b>Arrival</b><span>Seaplane or speedboat straight to your island resort</span></li>
+          <li><b>Stay</b><span>Private overwater villa, 4 to 7 nights</span></li>
+          <li><b>Your host</b><span>The same host on WhatsApp from Doha pickup to your return</span></li>
+        </ul>
+        <div class="intl-cta">
+          <a class="btn btn-gold" href="#enquire" data-pick="Maldives escape (international)">Plan a Maldives escape</a>
+          <p class="intl-more">Ask us about other destinations too.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="band-cream" id="how" data-section="how" data-label="How it works">
     <div class="wrap">
       <div class="section-head">
@@ -495,6 +535,7 @@ body.editing .ed-flash { animation: edflash 1.2s ease; }
             <option>Private yacht charter</option>
             <option>Skyline dhow at dusk</option>
             <option>Dunes &amp; desert camp</option>
+            <option>Maldives escape (international)</option>
             <option>Not sure yet, help me choose</option>
           </select></div>
         <div class="field"><label for="f-notes">Anything we should know?</label><textarea id="f-notes" name="notes" rows="3"></textarea></div>
@@ -513,7 +554,7 @@ body.editing .ed-flash { animation: edflash 1.2s ease; }
       <div><h4>Experiences</h4><ul><li><a href="#experiences">Inland Sea safari</a></li><li><a href="#experiences">Yacht charter</a></li><li><a href="#experiences">Skyline dhow</a></li><li><a href="#experiences">Desert camp</a></li></ul></div>
       <div><h4>Based in</h4><ul><li>Doha, State of Qatar</li><li>Open daily, 8:00–22:00 Qatar time (GMT+3)</li><li id="doha-clock" hidden></li></ul></div>
     </div>
-    <p class="credits">© 2026 Luxury Voyages Qatar. Photography from Unsplash, including Darshan Gajara, rishi, Akbar Nemati and Fasrin Ahamad.</p>
+    <p class="credits">© 2026 Luxury Voyages Qatar. Photography from Unsplash, including Darshan Gajara, rishi, Akbar Nemati, Fasrin Ahamad and Rayyu Maldives.</p>
   </div>
 </footer>
 
@@ -555,7 +596,7 @@ body.editing .ed-flash { animation: edflash 1.2s ease; }
       });
     });
 
-    var blockSel = '.nav-bar, .eyebrow, .hero .lede, .hero-ctas, .hero-meta, .section-head > p:not(.eyebrow), .desert-lede, .exp, .activities li, .desert-foot, .steps li, .enquire-intro ul, form.card, .foot > div, .credits';
+    var blockSel = '.nav-bar, .eyebrow, .hero .lede, .hero-ctas, .hero-meta, .section-head > p:not(.eyebrow), .desert-lede, .exp, .activities li, .desert-foot, .intl-photo, .intl-facts li, .intl-cta, .steps li, .enquire-intro ul, form.card, .foot > div, .credits';
     document.querySelectorAll(blockSel).forEach(function (el) {
       el.classList.add('lvq-block');
       // Stagger siblings in a grid or list.
@@ -598,6 +639,10 @@ body.editing .ed-flash { animation: edflash 1.2s ease; }
 
   var form = document.getElementById('enquiry-form');
   var status = document.getElementById('form-status');
+  // Buttons like "Plan a Maldives escape" pre-select their experience in the form.
+  document.querySelectorAll('[data-pick]').forEach(function (a) {
+    a.addEventListener('click', function () { form.elements.experience.value = a.getAttribute('data-pick'); });
+  });
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var name = form.elements.name.value.trim();

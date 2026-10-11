@@ -7,6 +7,7 @@ A mobile-first showcase website for Luxury Voyages Qatar, a company offering pri
 - **Hero**: dhows in Doha Bay at golden hour under a deep navy gradient, with a gold call-to-action button
 - **Signature experiences**: Inland Sea desert safari, private yacht charter at The Pearl, skyline dhow at dusk, dunes and desert camp
 - **The heart of Qatar**: the desert as the highlight of Qatar, with six activities over a golden-hour dune background
+- **Beyond Qatar**: a Maldives escape planned from Doha (direct flight, seaplane transfer, overwater villa), with a button that pre-selects it in the enquiry form
 - **How it works**: three steps from enquiry to voyage
 - **Enquire**: an enquiry form (front end only; not connected to a mail service yet)
 - **Footer**: opening hours in Qatar time (GMT+3), with a live Doha clock that shows open or closed
@@ -23,4 +24,4 @@ It's a static site with no build step. Open `index.html` in a browser, or turn o
 
 ## Photo credits
 
-Photography from [Unsplash](https://unsplash.com), including work by Darshan Gajara, rishi, Akbar Nemati and Fasrin Ahamad.
+Photography from [Unsplash](https://unsplash.com), including work by Darshan Gajara, rishi, Akbar Nemati, Fasrin Ahamad and Rayyu Maldives.

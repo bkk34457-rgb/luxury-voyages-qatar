@@ -6,7 +6,7 @@
 <title>Luxury Voyages Qatar</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Figtree:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Figtree:wght@400;500;600&display=swap">
 <style>
 /* Layout: mobile-first single column; photo hero under a navy gradient, cream content bands, desert dune band, navy enquiry + footer. Brand commits to one look (no dark/light switch).
    The six base colours, fonts and layout dials below set the look; everything else derives from them. */
@@ -27,7 +27,7 @@
   --cream-glow: color-mix(in srgb, var(--cream) 80%, transparent);
 
   --f-display: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
-  --f-serif: "Cormorant Garamond", "Garamond", "Times New Roman", serif;
+  --f-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
   --f-body: "Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
 
   --radius: 2px;
@@ -60,7 +60,7 @@ a { color: inherit; }
 
 h1, h2, h3 { font-family: var(--f-display); font-weight: 400; text-transform: uppercase; letter-spacing: 0.04em; line-height: 1.02; margin: 0; text-wrap: balance; }
 .eyebrow { font-family: var(--f-body); font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0; }
-em.serif { font-family: var(--f-serif); font-style: italic; text-transform: none; letter-spacing: .005em; font-weight: 500; font-size: 1.14em; line-height: .9; }
+em.serif { font-family: var(--f-serif); font-style: italic; text-transform: none; letter-spacing: 0; font-weight: 400; }
 
 /* Buttons */
 .btn {
@@ -116,7 +116,7 @@ em.serif { font-family: var(--f-serif); font-style: italic; text-transform: none
 }
 .hero-inner { display: grid; gap: 22px; }
 .hero h1 { font-size: calc(clamp(46px, 12vw, 104px) * var(--hs)); font-weight: 300; }
-.hero h1 em.serif { color: var(--gold-soft); font-size: 1.16em; }
+.hero h1 em.serif { color: var(--gold-soft); font-size: 1.04em; }
 .hero p.lede { margin: 0; max-width: 34em; font-size: 17px; color: rgba(255,255,255,.86); }
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
 .hero-meta {
@@ -136,7 +136,7 @@ em.serif { font-family: var(--f-serif); font-style: italic; text-transform: none
 .exp-grid { display: grid; gap: 28px; }
 .exp {
   display: grid; grid-template-rows: auto 1fr; background: var(--white);
-  border-radius: var(--radius); overflow: hidden;
+  border-top: 2px solid var(--gold); border-radius: var(--radius); overflow: hidden;
 }
 .exp figure { margin: 0; aspect-ratio: 4 / 3; overflow: hidden; max-width: 100%; }
 .exp figure img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s ease; }
@@ -156,7 +156,6 @@ em.serif { font-family: var(--f-serif); font-style: italic; text-transform: none
 /* Navy band (enquiry) */
 .band-navy { background: var(--navy-800); color: var(--white); padding-block: calc(76px * var(--space)); position: relative; overflow: hidden; }
 .band-navy .section-head h2 { color: var(--white); }
-.band-navy .section-head h2 em.serif { color: var(--gold-soft); }
 .band-navy .section-head p { color: rgba(255,255,255,.72); }
 
 /* Desert: golden-hour dune photo, no colour overlay. Text takes the dunes' own shadow browns and multiplies into the sand so it reads as part of the landscape. */
@@ -173,7 +172,7 @@ em.serif { font-family: var(--f-serif); font-style: italic; text-transform: none
 .desert-head h2 em.serif { color: var(--dune-ember); }
 .desert-lede {
   margin: 0; max-width: 46ch; font-size: 17px; color: var(--dune-ink);
-  background: color-mix(in srgb, var(--cream) var(--panel-pct), transparent); padding: 18px 20px;
+  background: color-mix(in srgb, var(--cream) var(--panel-pct), transparent); padding: 18px 20px; border-left: 3px solid var(--gold);
 }
 .activities { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
 .activities li {
@@ -191,7 +190,7 @@ em.serif { font-family: var(--f-serif); font-style: italic; text-transform: none
 /* Beyond Qatar: international feature (photo + details), stacked on phones, side by side on desktop */
 /* Discover the world: two trip cards; the Maldives card is the featured (wider) one on desktop */
 .world-grid { display: grid; gap: 24px; }
-.trip { display: grid; grid-template-rows: auto 1fr; min-width: 0; background: var(--navy-700); border-radius: calc(var(--radius) + 4px); overflow: hidden; }
+.trip { display: grid; grid-template-rows: auto 1fr; min-width: 0; background: var(--navy-700); border-top: 2px solid var(--gold); border-radius: calc(var(--radius) + 4px); overflow: hidden; }
 .trip-photo { position: relative; margin: 0; aspect-ratio: 3 / 2; max-width: 100%; overflow: hidden; }
 .trip-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s ease; }
 .trip:hover .trip-photo img { transform: scale(1.03); }
@@ -240,7 +239,7 @@ em.serif { font-family: var(--f-serif); font-style: italic; text-transform: none
 .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: step; }
 .steps li { display: grid; grid-template-columns: 56px 1fr; gap: 16px; padding-block: 24px; border-top: 1px solid var(--cream-line); counter-increment: step; }
 .steps li:last-child { border-bottom: 1px solid var(--cream-line); }
-.steps li::before { content: counter(step); font-family: var(--f-display); font-size: 34px; line-height: 1; color: var(--gold); }
+.steps li::before { content: counter(step, decimal-leading-zero); font-family: var(--f-display); font-size: 34px; line-height: 1; color: var(--gold); }
 .steps h3 { font-size: 24px; color: var(--navy-800); margin-bottom: 6px; }
 .steps p { margin: 0; color: var(--ink-soft); max-width: 52ch; }
 
@@ -249,7 +248,7 @@ em.serif { font-family: var(--f-serif); font-style: italic; text-transform: none
 .enquire-intro p { color: rgba(255,255,255,.75); max-width: 40ch; }
 .enquire-intro ul { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 10px; font-size: 15px; color: rgba(255,255,255,.85); }
 .enquire-intro li::before { content: ""; display: inline-block; width: 18px; height: 1px; background: var(--gold); vertical-align: middle; margin-right: 12px; }
-form.card { background: var(--cream); color: var(--ink); padding: 26px 22px; display: grid; gap: 16px; border-radius: var(--radius); }
+form.card { background: var(--cream); color: var(--ink); padding: 26px 22px; display: grid; gap: 16px; border-top: 3px solid var(--gold); border-radius: var(--radius); }
 .desert-lede { border-radius: var(--radius); }
 .field { display: grid; gap: 6px; min-width: 0; }
 .field label { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--navy-800); }
@@ -260,7 +259,7 @@ form.card { background: var(--cream); color: var(--ink); padding: 26px 22px; dis
 .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 25%, transparent); }
 .row-2 { display: grid; gap: 16px; }
 .form-note { font-size: 13px; color: var(--ink-soft); margin: 0; }
-.form-status { font-size: 14px; color: var(--navy-800); background: var(--white); border-radius: var(--radius); padding: 12px 14px; margin: 0; }
+.form-status { font-size: 14px; color: var(--navy-800); background: var(--white); border-left: 3px solid var(--gold); padding: 12px 14px; margin: 0; }
 
 /* Footer */
 footer { background: var(--navy-900); color: rgba(255,255,255,.7); padding-block: 48px 36px; font-size: 14px; }
@@ -308,8 +307,8 @@ footer { background: var(--navy-900); color: rgba(255,255,255,.7); padding-block
 /* Text reveal: headings rise in word by word, other text blocks fade up. Resting state is always visible;
    the animation only plays once an element is tagged .lvq-in (on load for the first screen, just before scrolling into view for the rest). */
 @keyframes lvq-rise {
-  from { opacity: 0; transform: translateY(.35em); }
-  to { opacity: 1; transform: none; }
+  from { opacity: 0; transform: translateY(.45em); filter: blur(4px); }
+  to { opacity: 1; transform: none; filter: none; }
 }
 .lvq-w { display: inline-block; }
 .lvq-in .lvq-w, .lvq-block.lvq-in {
@@ -343,14 +342,15 @@ footer { background: var(--navy-900); color: rgba(255,255,255,.7); padding-block
   <section class="hero">
     <img class="hero-photo" src="images/boats.jpg" alt="Traditional wooden dhows moored in Doha Bay at golden hour, with the Museum of Islamic Art and West Bay towers behind">
     <div class="wrap hero-inner">
+      <p class="eyebrow">Private experiences · Doha &amp; beyond</p>
       <h1>Qatar, <em class="serif">privately</em> arranged</h1>
-      <p class="lede">Desert safaris to the Inland Sea, yacht charters from The Pearl and dhow cruises along the Corniche, each one run privately for your group.</p>
+      <p class="lede">Desert safaris to the Inland Sea, yachts out of The Pearl, and dhow cruises past the skyline at dusk. Every voyage is planned around your group, your dates and your pace.</p>
       <div class="hero-ctas">
         <a class="btn btn-gold" href="#enquire">Plan your voyage</a>
         <a class="btn btn-line" href="#experiences">View experiences</a>
       </div>
       <div class="hero-meta">
-        <span>Hotel pickup in Doha</span>
+        <span><b>25.29° N</b> Doha Bay</span>
         <span>Private groups of 2–12</span>
         <span>Arabic &amp; English guides</span>
       </div>
@@ -360,8 +360,9 @@ footer { background: var(--navy-900); color: rgba(255,255,255,.7); padding-block
   <section class="band-cream" id="experiences">
     <div class="wrap">
       <div class="section-head">
-        <h2>Private experiences in Qatar</h2>
-        <p>Every trip is private, with your own host and a driver or captain who knows the route. Departure times move with the season so you get the best light.</p>
+        <p class="eyebrow">Signature experiences</p>
+        <h2>Four ways to <em class="serif">see</em> Qatar</h2>
+        <p>Each one runs privately, with a dedicated host and a driver or captain who knows the route. Times shift with the season to catch the best light.</p>
       </div>
       <div class="exp-grid">
         <article class="exp">
@@ -378,7 +379,7 @@ footer { background: var(--navy-900); color: rgba(255,255,255,.7); padding-block
           <div class="exp-body">
             <span class="exp-place">The Pearl-Qatar</span>
             <h3>Private yacht charter</h3>
-            <p>Leave Porto Arabia marina on a crewed yacht, stop to swim off the sandbanks and return around sunset.</p>
+            <p>Leave Porto Arabia marina on a crewed yacht, swim off the sandbanks, and come back in as the Gulf turns gold.</p>
             <div class="exp-facts"><span>4 hours</span><span>Up to 12 guests</span><span>Crew &amp; catering</span></div>
           </div>
         </article>
@@ -396,7 +397,7 @@ footer { background: var(--navy-900); color: rgba(255,255,255,.7); padding-block
           <div class="exp-body">
             <span class="exp-place">Sealine dunes</span>
             <h3>Dunes &amp; desert camp</h3>
-            <p>Dune driving with an experienced guide, then dinner and Arabic coffee at a private Bedouin-style camp.</p>
+            <p>Dune driving with an experienced guide, then a private Bedouin-style camp with Arabic coffee, a grill and a sky full of stars.</p>
             <div class="exp-facts"><span>Overnight</span><span>Up to 8 guests</span><span>Private camp</span></div>
           </div>
         </article>
@@ -408,8 +409,9 @@ footer { background: var(--navy-900); color: rgba(255,255,255,.7); padding-block
     <img class="desert-bg" src="images/dunes.jpg" alt="" aria-hidden="true">
     <div class="wrap">
       <div class="desert-head">
-        <h2>Out in the desert</h2>
-        <p class="desert-lede">South of Doha the dunes run for kilometres down to Khor Al Adaid, where the sand meets the sea. Most of our trips head this way, and it's the part of Qatar guests usually remember best.</p>
+        <p class="eyebrow">The heart of Qatar</p>
+        <h2>The <em class="serif">desert</em> is the adventure</h2>
+        <p class="desert-lede">Past the towers of Doha, the land turns to gold. Dunes run south for kilometres to Khor Al Adaid, where the sand meets the sea. For most of our guests this is the part of Qatar they remember longest, and it is where we spend most of our days.</p>
       </div>
       <ul class="activities">
         <li><h3>Dune bashing</h3><p>Ride the high dunes near Sealine in a private 4×4 with a licensed desert driver.</p></li>
@@ -428,6 +430,7 @@ footer { background: var(--navy-900); color: rgba(255,255,255,.7); padding-block
   <section class="band-navy" id="world">
     <div class="wrap">
       <div class="section-head">
+        <p class="eyebrow">Beyond Qatar</p>
         <h2>Discover the <em class="serif">world</em></h2>
         <p>Island trips beyond Qatar, planned from Doha with the same private host who looks after you at home. We arrange everything from your front door to your villa.</p>
       </div>
@@ -473,7 +476,8 @@ footer { background: var(--navy-900); color: rgba(255,255,255,.7); padding-block
   <section class="band-cream" id="how">
     <div class="wrap">
       <div class="section-head">
-        <h2>How booking works</h2>
+        <p class="eyebrow">How it works</p>
+        <h2>From enquiry to <em class="serif">voyage</em></h2>
       </div>
       <ol class="steps">
         <li><div><h3>Tell us your dates</h3><p>Share when you're in Qatar, how many are travelling and what interests you. A short message is enough.</p></div></li>
@@ -486,7 +490,8 @@ footer { background: var(--navy-900); color: rgba(255,255,255,.7); padding-block
   <section class="band-sand" id="your-way">
     <div class="wrap">
       <div class="section-head">
-        <h2>Let us know how you'd like your trip</h2>
+        <p class="eyebrow">Your trip, your way</p>
+        <h2>Let us know how you'd like your <em class="serif">trip</em></h2>
         <p>Tap whatever suits you. We'll add your choices to the enquiry form so your host can shape the trip before you speak.</p>
       </div>
       <div class="prefs" id="prefs">
@@ -553,7 +558,8 @@ footer { background: var(--navy-900); color: rgba(255,255,255,.7); padding-block
     <div class="wrap enquire">
       <div class="enquire-intro">
         <div class="section-head" style="margin-bottom:0">
-          <h2>Send us an enquiry</h2>
+          <p class="eyebrow">Enquire</p>
+          <h2>Start <em class="serif">planning</em></h2>
           <p>Tell us a little about your trip and we'll come back with a private itinerary.</p>
         </div>
         <ul>

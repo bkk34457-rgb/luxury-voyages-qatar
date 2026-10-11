@@ -16,7 +16,7 @@ A mobile-first showcase website for Luxury Voyages Qatar, a company offering pri
 ## Design
 
 - Colours: deep navy base, muted gold accents, soft cream text areas
-- Type: Barlow Condensed (headings), Cormorant Garamond (italic accents), Figtree (body), loaded from Google Fonts
+- Type: Barlow Condensed (headings), Instrument Serif (italic accents), Figtree (body), loaded from Google Fonts
 - Text animates in on load and on scroll, and the animation is skipped for visitors who turn on reduced motion
 
 ## Run it

@@ -6,10 +6,10 @@
 <title>Luxury Voyages Qatar</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Figtree:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Figtree:wght@400;500;600&display=swap">
 <style>
 /* Layout: mobile-first single column; photo hero under a navy gradient, cream content bands, desert dune band, navy enquiry + footer. Brand commits to one look (no dark/light switch).
-   The six base colours, fonts and layout dials below are what the in-page editor changes; everything else derives from them. */
+   The six base colours, fonts and layout dials below set the look; everything else derives from them. */
 :root {
   --navy-900: #08111f;
   --navy-800: #0e1b30;
@@ -27,7 +27,7 @@
   --cream-glow: color-mix(in srgb, var(--cream) 80%, transparent);
 
   --f-display: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
-  --f-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --f-serif: "Cormorant Garamond", "Garamond", "Times New Roman", serif;
   --f-body: "Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
 
   --radius: 2px;
@@ -60,7 +60,7 @@ a { color: inherit; }
 
 h1, h2, h3 { font-family: var(--f-display); font-weight: 400; text-transform: uppercase; letter-spacing: 0.04em; line-height: 1.02; margin: 0; text-wrap: balance; }
 .eyebrow { font-family: var(--f-body); font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin: 0; }
-em.serif { font-family: var(--f-serif); font-style: italic; text-transform: none; letter-spacing: 0; font-weight: 400; }
+em.serif { font-family: var(--f-serif); font-style: italic; text-transform: none; letter-spacing: .005em; font-weight: 500; font-size: 1.14em; line-height: .9; }
 
 /* Buttons */
 .btn {
@@ -116,7 +116,7 @@ em.serif { font-family: var(--f-serif); font-style: italic; text-transform: none
 }
 .hero-inner { display: grid; gap: 22px; }
 .hero h1 { font-size: calc(clamp(46px, 12vw, 104px) * var(--hs)); font-weight: 300; }
-.hero h1 em.serif { color: var(--gold-soft); font-size: 1.04em; }
+.hero h1 em.serif { color: var(--gold-soft); font-size: 1.16em; }
 .hero p.lede { margin: 0; max-width: 34em; font-size: 17px; color: rgba(255,255,255,.86); }
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
 .hero-meta {
@@ -136,7 +136,7 @@ em.serif { font-family: var(--f-serif); font-style: italic; text-transform: none
 .exp-grid { display: grid; gap: 28px; }
 .exp {
   display: grid; grid-template-rows: auto 1fr; background: var(--white);
-  border-top: 2px solid var(--gold); border-radius: var(--radius); overflow: hidden;
+  border-radius: var(--radius); overflow: hidden;
 }
 .exp figure { margin: 0; aspect-ratio: 4 / 3; overflow: hidden; max-width: 100%; }
 .exp figure img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s ease; }
@@ -156,6 +156,7 @@ em.serif { font-family: var(--f-serif); font-style: italic; text-transform: none
 /* Navy band (enquiry) */
 .band-navy { background: var(--navy-800); color: var(--white); padding-block: calc(76px * var(--space)); position: relative; overflow: hidden; }
 .band-navy .section-head h2 { color: var(--white); }
+.band-navy .section-head h2 em.serif { color: var(--gold-soft); }
 .band-navy .section-head p { color: rgba(255,255,255,.72); }
 
 /* Desert: golden-hour dune photo, no colour overlay. Text takes the dunes' own shadow browns and multiplies into the sand so it reads as part of the landscape. */
@@ -172,7 +173,7 @@ em.serif { font-family: var(--f-serif); font-style: italic; text-transform: none
 .desert-head h2 em.serif { color: var(--dune-ember); }
 .desert-lede {
   margin: 0; max-width: 46ch; font-size: 17px; color: var(--dune-ink);
-  background: color-mix(in srgb, var(--cream) var(--panel-pct), transparent); padding: 18px 20px; border-left: 3px solid var(--gold);
+  background: color-mix(in srgb, var(--cream) var(--panel-pct), transparent); padding: 18px 20px;
 }
 .activities { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
 .activities li {
@@ -189,7 +190,7 @@ em.serif { font-family: var(--f-serif); font-style: italic; text-transform: none
 
 /* Beyond Qatar: international feature (photo + details), stacked on phones, side by side on desktop */
 .intl { display: grid; gap: 32px; }
-.intl-photo { margin: 0; aspect-ratio: 4 / 3; max-width: 100%; overflow: hidden; border-top: 2px solid var(--gold); border-radius: var(--radius); }
+.intl-photo { margin: 0; aspect-ratio: 4 / 3; max-width: 100%; overflow: hidden; border-radius: var(--radius); }
 .intl-photo img { width: 100%; height: 100%; object-fit: cover; }
 .intl-body { display: grid; gap: 22px; min-width: 0; }
 .intl-body .section-head { margin-bottom: 0; }
@@ -205,7 +206,7 @@ em.serif { font-family: var(--f-serif); font-style: italic; text-transform: none
 .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: step; }
 .steps li { display: grid; grid-template-columns: 56px 1fr; gap: 16px; padding-block: 24px; border-top: 1px solid var(--cream-line); counter-increment: step; }
 .steps li:last-child { border-bottom: 1px solid var(--cream-line); }
-.steps li::before { content: counter(step, decimal-leading-zero); font-family: var(--f-display); font-size: 34px; line-height: 1; color: var(--gold); }
+.steps li::before { content: counter(step); font-family: var(--f-display); font-size: 34px; line-height: 1; color: var(--gold); }
 .steps h3 { font-size: 24px; color: var(--navy-800); margin-bottom: 6px; }
 .steps p { margin: 0; color: var(--ink-soft); max-width: 52ch; }
 
@@ -214,7 +215,7 @@ em.serif { font-family: var(--f-serif); font-style: italic; text-transform: none
 .enquire-intro p { color: rgba(255,255,255,.75); max-width: 40ch; }
 .enquire-intro ul { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 10px; font-size: 15px; color: rgba(255,255,255,.85); }
 .enquire-intro li::before { content: ""; display: inline-block; width: 18px; height: 1px; background: var(--gold); vertical-align: middle; margin-right: 12px; }
-form.card { background: var(--cream); color: var(--ink); padding: 26px 22px; display: grid; gap: 16px; border-top: 3px solid var(--gold); border-radius: var(--radius); }
+form.card { background: var(--cream); color: var(--ink); padding: 26px 22px; display: grid; gap: 16px; border-radius: var(--radius); }
 .desert-lede { border-radius: var(--radius); }
 .field { display: grid; gap: 6px; min-width: 0; }
 .field label { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--navy-800); }
@@ -225,7 +226,7 @@ form.card { background: var(--cream); color: var(--ink); padding: 26px 22px; dis
 .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 25%, transparent); }
 .row-2 { display: grid; gap: 16px; }
 .form-note { font-size: 13px; color: var(--ink-soft); margin: 0; }
-.form-status { font-size: 14px; color: var(--navy-800); background: var(--white); border-left: 3px solid var(--gold); padding: 12px 14px; margin: 0; }
+.form-status { font-size: 14px; color: var(--navy-800); background: var(--white); border-radius: var(--radius); padding: 12px 14px; margin: 0; }
 
 /* Footer */
 footer { background: var(--navy-900); color: rgba(255,255,255,.7); padding-block: 48px 36px; font-size: 14px; }
@@ -268,8 +269,8 @@ footer { background: var(--navy-900); color: rgba(255,255,255,.7); padding-block
 /* Text reveal: headings rise in word by word, other text blocks fade up. Resting state is always visible;
    the animation only plays once an element is tagged .lvq-in (on load for the first screen, just before scrolling into view for the rest). */
 @keyframes lvq-rise {
-  from { opacity: 0; transform: translateY(.45em); filter: blur(4px); }
-  to { opacity: 1; transform: none; filter: none; }
+  from { opacity: 0; transform: translateY(.35em); }
+  to { opacity: 1; transform: none; }
 }
 .lvq-w { display: inline-block; }
 .lvq-in .lvq-w, .lvq-block.lvq-in {
@@ -282,86 +283,6 @@ footer { background: var(--navy-900); color: rgba(255,255,255,.7); padding-block
   .exp figure img { transition: none; }
 }
 
-/* Sections switched off in the editor */
-body:not(.editing) main > section[data-off] { display: none; }
-
-/* ---------- In-page editor (only shown to people who can edit). Fixed colours so it stays readable whatever palette is chosen. ---------- */
-:root {
-  --ed-bg: #101826; --ed-bg-2: #182234; --ed-line: #2a3650; --ed-fg: #eef1f6; --ed-dim: #9aa6bb;
-  --ed-accent: #d9b871; --ed-ok: #5fc48a; --ed-bad: #f07a7a;
-}
-.ed-launch {
-  position: fixed; z-index: 60; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px));
-  display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 0 18px;
-  font: 600 13px/1 var(--f-body), system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase;
-  background: var(--ed-bg); color: var(--ed-fg); border: 1px solid var(--ed-accent); border-radius: 999px; cursor: pointer;
-  box-shadow: 0 10px 30px -10px rgba(0,0,0,.6);
-}
-.ed-launch:hover { background: var(--ed-bg-2); }
-.ed-launch svg { width: 16px; height: 16px; }
-
-body.editing [data-ek] { outline: 1px dashed color-mix(in srgb, var(--ed-accent) 70%, transparent); outline-offset: 3px; cursor: text; }
-body.editing [data-ek]:hover { outline-style: solid; }
-body.editing [data-ek]:focus { outline: 2px solid var(--ed-accent); outline-offset: 3px; }
-body.editing main > section[data-off] { opacity: .35; }
-body.editing .ed-flash { animation: edflash 1.2s ease; }
-@keyframes edflash { 0%,100% { box-shadow: none; } 30% { box-shadow: inset 0 0 0 4px var(--ed-accent); } }
-
-.ed-panel {
-  position: fixed; z-index: 70; inset: auto 0 0 0; height: 62vh; display: flex; flex-direction: column;
-  background: var(--ed-bg); color: var(--ed-fg); border-top: 1px solid var(--ed-accent);
-  font: 400 14px/1.45 "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
-  padding-bottom: env(safe-area-inset-bottom, 0px); box-shadow: 0 -20px 40px -20px rgba(0,0,0,.6);
-}
-.ed-panel * { box-sizing: border-box; }
-.ed-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--ed-line); }
-.ed-top strong { font-size: 14px; letter-spacing: .06em; text-transform: uppercase; }
-.ed-hint { margin: 0; padding: 10px 16px; font-size: 13px; color: var(--ed-dim); border-bottom: 1px solid var(--ed-line); }
-.ed-tabs { display: flex; gap: 2px; padding: 8px 10px 0; overflow-x: auto; border-bottom: 1px solid var(--ed-line); }
-.ed-tab { flex: none; padding: 9px 12px; background: none; border: 0; border-bottom: 2px solid transparent; color: var(--ed-dim); font-family: inherit; font-size: 12px; font-weight: 600; line-height: 1; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
-.ed-tab[aria-selected="true"] { color: var(--ed-fg); border-bottom-color: var(--ed-accent); }
-.ed-body { flex: 1; overflow-y: auto; padding: 16px; display: grid; gap: 18px; align-content: start; }
-.ed-group { display: grid; gap: 10px; }
-.ed-group h4 { margin: 0; font-size: 11px; font-weight: 600; line-height: 1; letter-spacing: .16em; text-transform: uppercase; color: var(--ed-accent); }
-.ed-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 10px; }
-.ed-row label { min-width: 0; }
-.ed-row small { display: block; color: var(--ed-dim); font-size: 12px; }
-.ed-panel input[type="color"] { width: 44px; height: 32px; padding: 0; border: 1px solid var(--ed-line); border-radius: 6px; background: none; cursor: pointer; }
-.ed-panel select, .ed-panel input[type="range"] { width: 100%; }
-.ed-panel select { padding: 8px 10px; border-radius: 6px; border: 1px solid var(--ed-line); background: var(--ed-bg-2); color: var(--ed-fg); font: inherit; }
-.ed-slider { display: grid; gap: 6px; }
-.ed-slider .ed-row output { font-variant-numeric: tabular-nums; color: var(--ed-dim); font-size: 12px; }
-.ed-panel input[type="range"] { accent-color: var(--ed-accent); }
-.ed-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 36px; padding: 0 12px; border-radius: 6px; border: 1px solid var(--ed-line); background: var(--ed-bg-2); color: var(--ed-fg); font-family: inherit; font-size: 12px; font-weight: 600; line-height: 1; letter-spacing: .04em; cursor: pointer; }
-.ed-btn:hover:not(:disabled) { border-color: var(--ed-accent); }
-.ed-btn:disabled { opacity: .45; cursor: not-allowed; }
-.ed-btn.primary { background: var(--ed-accent); color: #1a1407; border-color: var(--ed-accent); }
-.ed-btn.danger { color: var(--ed-bad); }
-.ed-btn.icon { width: 36px; padding: 0; }
-.ed-sec { display: grid; grid-template-columns: 1fr auto auto auto; align-items: center; gap: 6px; padding: 8px 10px; border: 1px solid var(--ed-line); border-radius: 8px; background: var(--ed-bg-2); }
-.ed-sec.off span { color: var(--ed-dim); text-decoration: line-through; }
-.ed-media { display: grid; grid-template-columns: 64px 1fr auto; align-items: center; gap: 12px; }
-.ed-media img, .ed-media .ed-vthumb { width: 64px; height: 44px; object-fit: cover; border-radius: 4px; background: var(--ed-bg-2); }
-.ed-media .ed-vthumb { display: grid; place-items: center; font-size: 11px; color: var(--ed-dim); }
-.ed-chips { display: flex; flex-wrap: wrap; gap: 6px; }
-.ed-chip { display: inline-flex; align-items: center; gap: 6px; padding: 5px 9px; border-radius: 999px; font-size: 12px; background: var(--ed-bg-2); border: 1px solid var(--ed-line); }
-.ed-chip b { font-weight: 600; }
-.ed-chip.ok b { color: var(--ed-ok); }
-.ed-chip.bad b { color: var(--ed-bad); }
-.ed-swatch { width: 14px; height: 14px; border-radius: 3px; border: 1px solid rgba(255,255,255,.25); display: inline-grid; place-items: center; font-size: 9px; font-weight: 700; }
-.ed-foot { display: grid; gap: 8px; padding: 12px 16px; border-top: 1px solid var(--ed-line); }
-.ed-actions { display: flex; flex-wrap: wrap; gap: 8px; }
-.ed-actions .grow { flex: 1; }
-.ed-status { margin: 0; font-size: 12px; color: var(--ed-dim); min-height: 1.2em; }
-.ed-status.ok { color: var(--ed-ok); }
-.ed-status.bad { color: var(--ed-bad); }
-@media (min-width: 980px) {
-  .ed-panel { inset: 0 0 0 auto; width: 360px; height: auto; border-top: 0; border-left: 1px solid var(--ed-accent); padding-top: env(safe-area-inset-top, 0px); }
-  body.editing { margin-right: 360px; }
-}
-@media (max-width: 979px) {
-  body.editing { padding-bottom: 62vh; }
-}
 </style>
 </head>
 <body>
@@ -380,34 +301,32 @@ body.editing .ed-flash { animation: edflash 1.2s ease; }
 </header>
 
 <main id="top">
-  <section class="hero" data-section="hero" data-label="Hero">
-    <img class="hero-photo" data-img="hero" data-label="Hero photo" src="images/boats.jpg" alt="Traditional wooden dhows moored in Doha Bay at golden hour, with the Museum of Islamic Art and West Bay towers behind">
+  <section class="hero">
+    <img class="hero-photo" src="images/boats.jpg" alt="Traditional wooden dhows moored in Doha Bay at golden hour, with the Museum of Islamic Art and West Bay towers behind">
     <div class="wrap hero-inner">
-      <p class="eyebrow">Private experiences · Doha &amp; beyond</p>
       <h1>Qatar, <em class="serif">privately</em> arranged</h1>
-      <p class="lede">Desert safaris to the Inland Sea, yachts out of The Pearl, and dhow cruises past the skyline at dusk. Every voyage is planned around your group, your dates and your pace.</p>
+      <p class="lede">Desert safaris to the Inland Sea, yacht charters from The Pearl and dhow cruises along the Corniche, each one run privately for your group.</p>
       <div class="hero-ctas">
         <a class="btn btn-gold" href="#enquire">Plan your voyage</a>
         <a class="btn btn-line" href="#experiences">View experiences</a>
       </div>
       <div class="hero-meta">
-        <span><b>25.29° N</b> Doha Bay</span>
+        <span>Hotel pickup in Doha</span>
         <span>Private groups of 2–12</span>
         <span>Arabic &amp; English guides</span>
       </div>
     </div>
   </section>
 
-  <section class="band-cream" id="experiences" data-section="experiences" data-label="Experiences">
+  <section class="band-cream" id="experiences">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">Signature experiences</p>
-        <h2>Four ways to <em class="serif">see</em> Qatar</h2>
-        <p>Each one runs privately, with a dedicated host and a driver or captain who knows the route. Times shift with the season to catch the best light.</p>
+        <h2>Private experiences in Qatar</h2>
+        <p>Every trip is private, with your own host and a driver or captain who knows the route. Departure times move with the season so you get the best light.</p>
       </div>
       <div class="exp-grid">
         <article class="exp">
-          <figure><img data-img="exp-1" data-label="Experience 1" src="images/khor-al-adaid.jpg" alt="Rippled sand dunes above the still water of Khor Al Adaid as the sun sets over the Inland Sea" loading="lazy"></figure>
+          <figure><img src="images/khor-al-adaid.jpg" alt="Rippled sand dunes above the still water of Khor Al Adaid as the sun sets over the Inland Sea" loading="lazy"></figure>
           <div class="exp-body">
             <span class="exp-place">Khor Al Adaid</span>
             <h3>Inland Sea desert safari</h3>
@@ -416,16 +335,16 @@ body.editing .ed-flash { animation: edflash 1.2s ease; }
           </div>
         </article>
         <article class="exp">
-          <figure><img data-img="exp-2" data-label="Experience 2" src="images/pearl-yachts.jpg" alt="Yachts moored at Porto Arabia marina, The Pearl-Qatar, with the towers lit at sunset" loading="lazy"></figure>
+          <figure><img src="images/pearl-yachts.jpg" alt="Yachts moored at Porto Arabia marina, The Pearl-Qatar, with the towers lit at sunset" loading="lazy"></figure>
           <div class="exp-body">
             <span class="exp-place">The Pearl-Qatar</span>
             <h3>Private yacht charter</h3>
-            <p>Leave Porto Arabia marina on a crewed yacht, swim off the sandbanks, and come back in as the Gulf turns gold.</p>
+            <p>Leave Porto Arabia marina on a crewed yacht, stop to swim off the sandbanks and return around sunset.</p>
             <div class="exp-facts"><span>4 hours</span><span>Up to 12 guests</span><span>Crew &amp; catering</span></div>
           </div>
         </article>
         <article class="exp">
-          <figure><img data-img="exp-3" data-label="Experience 3" src="images/doha-skyline-dusk.jpg" alt="Doha's West Bay towers lit up across the bay under a pink and violet dusk sky" loading="lazy"></figure>
+          <figure><img src="images/doha-skyline-dusk.jpg" alt="Doha's West Bay towers lit up across the bay under a pink and violet dusk sky" loading="lazy"></figure>
           <div class="exp-body">
             <span class="exp-place">Doha Corniche</span>
             <h3>Skyline dhow at dusk</h3>
@@ -434,11 +353,11 @@ body.editing .ed-flash { animation: edflash 1.2s ease; }
           </div>
         </article>
         <article class="exp">
-          <figure><img data-img="exp-4" data-label="Experience 4" src="images/sealine-camp.jpg" alt="Candlelit wooden deck and Arabic floor seating at a Sealine desert camp at dusk, with palms and 4x4s on the dunes behind" loading="lazy"></figure>
+          <figure><img src="images/sealine-camp.jpg" alt="Candlelit wooden deck and Arabic floor seating at a Sealine desert camp at dusk, with palms and 4x4s on the dunes behind" loading="lazy"></figure>
           <div class="exp-body">
             <span class="exp-place">Sealine dunes</span>
             <h3>Dunes &amp; desert camp</h3>
-            <p>Dune driving with an experienced guide, then a private Bedouin-style camp with Arabic coffee, a grill and a sky full of stars.</p>
+            <p>Dune driving with an experienced guide, then dinner and Arabic coffee at a private Bedouin-style camp.</p>
             <div class="exp-facts"><span>Overnight</span><span>Up to 8 guests</span><span>Private camp</span></div>
           </div>
         </article>
@@ -446,13 +365,12 @@ body.editing .ed-flash { animation: edflash 1.2s ease; }
     </div>
   </section>
 
-  <section class="desert" id="desert" data-section="desert" data-label="The Desert">
-    <img class="desert-bg" data-img="desert-bg" data-label="Desert background" src="images/dunes.jpg" alt="" aria-hidden="true">
+  <section class="desert" id="desert">
+    <img class="desert-bg" src="images/dunes.jpg" alt="" aria-hidden="true">
     <div class="wrap">
       <div class="desert-head">
-        <p class="eyebrow">The heart of Qatar</p>
-        <h2>The <em class="serif">desert</em> is the adventure</h2>
-        <p class="desert-lede">Past the towers of Doha, the land turns to gold. Dunes run south for kilometres to Khor Al Adaid, where the sand meets the sea. For most of our guests this is the part of Qatar they remember longest, and it is where we spend most of our days.</p>
+        <h2>Out in the desert</h2>
+        <p class="desert-lede">South of Doha the dunes run for kilometres down to Khor Al Adaid, where the sand meets the sea. Most of our trips head this way, and it's the part of Qatar guests usually remember best.</p>
       </div>
       <ul class="activities">
         <li><h3>Dune bashing</h3><p>Ride the high dunes near Sealine in a private 4×4 with a licensed desert driver.</p></li>
@@ -468,14 +386,13 @@ body.editing .ed-flash { animation: edflash 1.2s ease; }
     </div>
   </section>
 
-  <section class="band-navy" id="maldives" data-section="maldives" data-label="Beyond Qatar">
+  <section class="band-navy" id="maldives">
     <div class="wrap intl">
-      <figure class="intl-photo"><img data-img="maldives" data-label="Maldives photo" src="images/maldives.jpg" alt="Aerial view of overwater villas on a turquoise lagoon in the Maldives" loading="lazy"></figure>
+      <figure class="intl-photo"><img src="images/maldives.jpg" alt="Aerial view of overwater villas on a turquoise lagoon in the Maldives" loading="lazy"></figure>
       <div class="intl-body">
         <div class="section-head">
-          <p class="eyebrow">Beyond Qatar</p>
-          <h2>The <em class="serif">Maldives</em>, arranged from Doha</h2>
-          <p>Our first voyage abroad. A direct flight from Doha has you on a coral lagoon in under five hours, and we plan every step between your front door and your villa.</p>
+          <h2>The <em class="serif">Maldives</em>, from Doha</h2>
+          <p>Our first trip outside Qatar. The direct flight from Doha takes under five hours, and we arrange everything from your front door to your villa.</p>
         </div>
         <ul class="intl-facts">
           <li><b>Getting there</b><span>Direct flight from Hamad International to Malé, under 5 hours</span></li>
@@ -485,17 +402,16 @@ body.editing .ed-flash { animation: edflash 1.2s ease; }
         </ul>
         <div class="intl-cta">
           <a class="btn btn-gold" href="#enquire" data-pick="Maldives escape (international)">Plan a Maldives escape</a>
-          <p class="intl-more">Ask us about other destinations too.</p>
+          <p class="intl-more">Other destinations on request.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="band-cream" id="how" data-section="how" data-label="How it works">
+  <section class="band-cream" id="how">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">How it works</p>
-        <h2>From enquiry to <em class="serif">voyage</em></h2>
+        <h2>How booking works</h2>
       </div>
       <ol class="steps">
         <li><div><h3>Tell us your dates</h3><p>Share when you're in Qatar, how many are travelling and what interests you. A short message is enough.</p></div></li>
@@ -505,12 +421,11 @@ body.editing .ed-flash { animation: edflash 1.2s ease; }
     </div>
   </section>
 
-  <section class="band-navy" id="enquire" data-section="enquire" data-label="Enquiry form">
+  <section class="band-navy" id="enquire">
     <div class="wrap enquire">
       <div class="enquire-intro">
         <div class="section-head" style="margin-bottom:0">
-          <p class="eyebrow">Enquire</p>
-          <h2>Start <em class="serif">planning</em></h2>
+          <h2>Send us an enquiry</h2>
           <p>Tell us a little about your trip and we'll come back with a private itinerary.</p>
         </div>
         <ul>

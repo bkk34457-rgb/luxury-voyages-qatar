@@ -19,12 +19,12 @@
   --maroon: #8a1538;
   --white: #ffffff;
 
-  --navy-700: color-mix(in srgb, var(--navy-800) 86%, white);
-  --gold-soft: color-mix(in srgb, var(--gold) 62%, white);
-  --gold-line: color-mix(in srgb, var(--gold) 50%, transparent);
-  --cream-line: color-mix(in srgb, var(--cream) 86%, var(--ink));
-  --ink-soft: color-mix(in srgb, var(--ink) 76%, var(--cream));
-  --cream-glow: color-mix(in srgb, var(--cream) 80%, transparent);
+  --navy-700: #303b4d;
+  --gold-soft: #d3c19b;
+  --gold-line: rgba(184, 155, 94, .5);
+  --cream-line: #d7d4ce;
+  --ink-soft: #4f545d;
+  --cream-glow: rgba(246, 241, 231, .8);
 
   --f-display: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
   --f-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
@@ -109,10 +109,10 @@ em.serif { font-family: var(--f-serif); font-style: italic; text-transform: none
   content: ""; position: absolute; inset: 0; z-index: -1; opacity: var(--hero-ov);
   background:
     linear-gradient(180deg,
-      color-mix(in srgb, var(--navy-900) 82%, transparent) 0%,
-      color-mix(in srgb, var(--navy-900) 25%, transparent) 30%,
-      color-mix(in srgb, var(--navy-800) 55%, transparent) 58%,
-      color-mix(in srgb, var(--navy-900) 96%, transparent) 100%);
+      rgba(8, 17, 31, .82) 0%,
+      rgba(8, 17, 31, .25) 30%,
+      rgba(14, 27, 48, .55) 58%,
+      rgba(8, 17, 31, .96) 100%);
 }
 .hero-inner { display: grid; gap: 22px; }
 .hero h1 { font-size: calc(clamp(46px, 12vw, 104px) * var(--hs)); font-weight: 300; }
@@ -172,14 +172,14 @@ em.serif { font-family: var(--f-serif); font-style: italic; text-transform: none
 .desert-head h2 em.serif { color: var(--dune-ember); }
 .desert-lede {
   margin: 0; max-width: 46ch; font-size: 17px; color: var(--dune-ink);
-  background: color-mix(in srgb, var(--cream) var(--panel-pct), transparent); padding: 18px 20px; border-left: 3px solid var(--gold);
+  background: rgba(246, 241, 231, .9); padding: 18px 20px; border-left: 3px solid var(--gold);
 }
 .activities { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
 .activities li {
   display: grid; gap: 4px; padding: 16px 18px; min-width: 0;
-  border-top: 2px solid color-mix(in srgb, var(--dune-ink) 45%, transparent);
+  border-top: 2px solid rgba(58, 29, 11, .45);
   /* Light gold from the "Plan a desert day" button; a soft shadow keeps it legible on bright sand. */
-  --act-gold: color-mix(in srgb, var(--gold) 55%, white);
+  --act-gold: #d8c8a6;
   color: var(--act-gold);
   text-shadow: 0 1px 2px rgba(58, 29, 11, .55), 0 0 14px rgba(58, 29, 11, .35);
 }
@@ -212,7 +212,7 @@ em.serif { font-family: var(--f-serif); font-style: italic; text-transform: none
 .world-note a { color: var(--gold-soft); }
 
 /* Your trip, your way: tap-to-choose preferences that fill in the enquiry */
-.band-sand { background: color-mix(in srgb, var(--gold) 16%, var(--cream)); padding-block: calc(72px * var(--space)); }
+.band-sand { background: #ece3d1; padding-block: calc(72px * var(--space)); }
 .prefs { display: grid; gap: 28px; }
 .pref { border: 0; margin: 0; padding: 0; min-width: 0; display: grid; gap: 12px; }
 .pref legend { padding: 0; margin-bottom: 12px; font: 400 22px/1.1 var(--f-display); letter-spacing: .04em; text-transform: uppercase; color: var(--navy-800); }
@@ -221,7 +221,7 @@ em.serif { font-family: var(--f-serif); font-style: italic; text-transform: none
 .chip {
   min-height: 42px; padding: 0 16px; border-radius: 999px; cursor: pointer;
   font: 500 14px/1 var(--f-body); color: var(--navy-800);
-  background: color-mix(in srgb, var(--white) 70%, transparent); border: 1px solid color-mix(in srgb, var(--navy-800) 22%, transparent);
+  background: rgba(255, 255, 255, .7); border: 1px solid rgba(14, 27, 48, .22);
   transition: background-color .15s, color .15s, border-color .15s;
 }
 .chip:hover { border-color: var(--navy-800); }
@@ -256,7 +256,7 @@ form.card { background: var(--cream); color: var(--ink); padding: 26px 22px; dis
   width: 100%; font: 400 16px/1.4 var(--f-body); color: var(--ink);
   background: var(--white); border: 1px solid var(--cream-line); border-radius: var(--radius); padding: 12px 14px;
 }
-.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 25%, transparent); }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(184, 155, 94, .25); }
 .row-2 { display: grid; gap: 16px; }
 .form-note { font-size: 13px; color: var(--ink-soft); margin: 0; }
 .form-status { font-size: 14px; color: var(--navy-800); background: var(--white); border-left: 3px solid var(--gold); padding: 12px 14px; margin: 0; }
